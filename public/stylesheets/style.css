@@ -283,3 +283,12 @@ body {
 .xb-bottom .xb-tab a:hover {
     color: #5eb95e;
 }
+
+.xb-question .xb-question-anwser {
+    margin: 10px 20px;
+    font-weight: bold;
+}
+
+.xb-question .xb-question-anwser strong {
+    color: #5eb95e;
+}
