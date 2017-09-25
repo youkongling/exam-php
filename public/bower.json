@@ -1,0 +1,17 @@
+{
+  "name": "public",
+  "authors": [
+    "xiaobo <1968468227@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
