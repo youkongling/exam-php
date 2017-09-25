@@ -104,6 +104,7 @@ body {
 .xb-question .xb-question-text {
     display: block;
     padding: 5px 10px;
+    font-weight: bold;
 }
 
 .xb-question .xb-question-choice {
@@ -157,4 +158,45 @@ body {
 
 .xb-question .swiper-pagination-progress .swiper-pagination-progressbar {
     background-color: #5eb95e;
+}
+
+.xb-question .swiper-container {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.xb-question .swiper-container::-webkit-scrollbar {
+    display: none;
+}
+
+.xb-modal .am-modal-dialog {
+    border-radius: 3px;
+}
+
+.xb-modal .am-modal-bd a {
+    display: inline-block;
+    color: #000;
+    background-color: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.xb-modal .am-modal-bd a:hover {
+    text-decoration: none;
+}
+
+.xb-modal .am-modal-bd .xb-active {
+    color: #FFF;
+    border-color: #5eb95e;
+    background-color: #5eb95e;
+}
+
+.xb-modal .am-u-sm-2 {
+    padding: 0px;
+    margin-bottom: 10px;
 }
