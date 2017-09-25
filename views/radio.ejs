@@ -23,14 +23,14 @@
         </div>
     </header>
     <style>
-    
+
     </style>
     <div class="am-g xb-section">
         <span class="am-u-sm-8">单项选择题</span>
         <span class="am-u-sm-4 am-text-right" id="question_num"><strong>1</strong>/10</span>
     </div>
     <div class="am-g xb-question">
-        <form action="" class="am-u-sm-12 xb-100h">
+        <form action="/radio" class="am-u-sm-12 xb-100h" id="question_form" method="post">
             <div class="swiper-container swiper-container-horizontal xb-100h">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-hash="1">
@@ -539,11 +539,16 @@
         </form>
     </div>
     <div class="xb-bottom am-g">
-        <div class="xb-tab am-u-sm-6" data-am-modal="{target:'#doc-modal-1'}">
+        <div class="xb-tab am-u-sm-4" data-am-modal="{target:'#doc-modal-1'}">
             <span class="xb-tab-icon"><i class="am-icon-leanpub am-icon-sm am-icon-fw"></i></span>
             <span class="xb-tab-span">答题卡</span>
         </div>
-        <div class="xb-tab am-u-sm-6">
+        <div class="xb-tab am-u-sm-4" id="question_submit">
+            <span class="xb-tab-icon"><i class="am-icon-calendar-minus-o am-icon-sm am-icon-fw"></i></span>
+            <span class="xb-tab-span">交卷</span>
+            <button type="submit" form="question_form" style="display: none;">交卷</button>
+        </div>
+        <div class="xb-tab am-u-sm-4">
             <span class="xb-tab-icon"><i class="am-icon-clock-o am-icon-sm am-icon-fw"></i></span>
             <span class="xb-tab-span"><strong>19:59</strong></span>
         </div>
@@ -625,15 +630,15 @@
                         var grandParent = parent.parentNode.parentNode.parentNode;
                         grandParent.setAttribute("data-choose", "true");
                         // 关联答题卡
-                        for (var i = 0; i < answer_btns.length; i++) {
-                            (function(i) {
-                                var choose = questions[i].dataset.choose;
+                        for (var x = 0; x < answer_btns.length; x++) {
+                            (function(x) {
+                                var choose = questions[x].dataset.choose;
                                 if (choose == "true") {
-                                    answer_btns[i].classList.add("xb-active");
+                                    answer_btns[x].classList.add("xb-active");
                                 } else {
-                                    answer_btns[i].classList.remove("xb-active");
+                                    answer_btns[x].classList.remove("xb-active");
                                 }
-                            })(i);
+                            })(x);
                         }
                     })
                 })(j);
@@ -651,6 +656,11 @@
         hash = this.location.hash;
         num = hash.split('#');
         question_num.innerHTML = num[1];
+    })
+    var submit_form = document.querySelector("#question_submit");
+    submit_form.addEventListener("touchstart",function(e){
+        var submit_btn = this.querySelector("button");
+        submit_btn.click();
     })
     </script>
 </body>

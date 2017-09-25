@@ -200,3 +200,86 @@ body {
     padding: 0px;
     margin-bottom: 10px;
 }
+
+.xb-anwser {
+    padding: 10px 5px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    text-align: center;
+}
+
+.xb-anwser span {
+    display: block;
+}
+
+.xb-anwser span:nth-child(1) {
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.xb-anwser span:nth-child(1) strong {
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.xb-card .xb-card-title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+}
+
+.xb-card-title span {
+    display: inline-block;
+    padding-top: 4px;
+}
+
+.xb-card-title h2 {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.xb-card .xb-card-score {
+    padding-top: 6px;
+}
+
+.xb-card-score span {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 24px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin: 3px;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+.xb-card-score .xb-score-success {
+    background-color: #5eb95e;
+    border-color: #5eb95e;
+    color: #FFF;
+}
+
+.xb-card-score .xb-score-danger {
+    background-color: #dd514c;
+    border-color: #dd514c;
+    color: #FFF;
+}
+
+.xb-bottom .xb-tab a {
+    color: #000;
+}
+
+.xb-bottom .xb-tab a:hover {
+    color: #5eb95e;
+}

@@ -12,6 +12,7 @@ var examList = require('./routes/examList');
 var radio = require('./routes/radio');
 var multiselect = require('./routes/multiselect');
 var judge = require('./routes/judge');
+var score = require('./routes/score');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/examList', examList);
 app.use('/radio', radio);
 app.use('/multiselect', multiselect);
 app.use('/judge', judge);
+app.use('/score', score);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
