@@ -132,12 +132,20 @@ body {
     /*height: 40px;*/
 }
 
+.xb-question .xb-radio i{
+	color: #FFF;
+}
+
 .xb-question .xb-radio .span-choice {
     background-color: #5eb95e;
     border: 1px solid #5eb95e;
     color: #FFF;
     font-weight: 400;
     transition: all 0.6s ease;
+}
+
+.xb-question .xb-radio .span-choice i{
+	/*opacity: 1;*/
 }
 
 .xb-question .xb-radio input[type="radio"],
