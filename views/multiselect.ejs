@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>考试系统</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/bower_components/amazeui/dist/css/amazeui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header data-am-widget="header" class="am-header am-header-white">
+        <div class="am-header-left am-header-nav">
+            <a href="/" class="">
+                <i class="am-icon-angle-left am-fr am-icon-lg"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">电子信息基础</h1>
+        <div class="am-header-right am-header-nav">
+            <a href="#right-link" class=""></a>
+        </div>
+    </header>
+    <style>
+
+    </style>
+    <div class="am-g xb-section">
+        <span class="am-u-sm-8">多项选择题</span>
+        <span class="am-u-sm-4 am-text-right" id="question_num"><strong>1</strong>/10</span>
+    </div>
+    <div class="am-g xb-question">
+        <form action="/multiselect" class="am-u-sm-12 xb-100h" id="question_form" method="post">
+            <div class="swiper-container swiper-container-horizontal xb-100h">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-hash="1">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-1-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-1-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-1-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-1-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="2">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-2-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-2-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-2-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-2-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="3">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-3-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-3-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-3-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-3-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="4">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-4-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-4-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-4-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-4-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="5">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-5-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-5-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-5-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-5-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="6">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-6-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-6-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-6-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-6-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="7">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-7-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-7-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-7-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-7-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="8">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-8-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-8-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-8-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-8-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="9">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-9-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-9-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-9-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-9-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="10">
+                        <div class="xb-question-text"> 我行办理无线POS机需要哪些材料（）</div>
+                        <div class="xb-question-choice" data-choose="false">
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-10-[]" value="A">
+                                        <span data-click="false">A</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业执照及真实性核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-10-[]" value="B">
+                                        <span data-click="false">B</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        法人代表身份证及联网核查
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-10-[]" value="C">
+                                        <span data-click="false">C</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        收单协议书及无线POS需求报告
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="am-g xb-question-15b">
+                                <label>
+                                    <div class="am-u-sm-1 xb-radio">
+                                        <input class="" type="checkbox" name="multiselect-10-[]" value="D">
+                                        <span data-click="false">D</span>
+                                    </div>
+                                    <div class="am-u-sm-11">
+                                        商户营业场所和居住场所照片
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-progress"></div>
+            </div>
+        </form>
+    </div>
+    <div class="xb-bottom am-g">
+        <div class="xb-tab am-u-sm-4" data-am-modal="{target:'#doc-modal-1'}">
+            <span class="xb-tab-icon"><i class="am-icon-leanpub am-icon-sm am-icon-fw"></i></span>
+            <span class="xb-tab-span">答题卡</span>
+        </div>
+        <div class="xb-tab am-u-sm-4" id="question_submit">
+            <span class="xb-tab-icon"><i class="am-icon-calendar-minus-o am-icon-sm am-icon-fw"></i></span>
+            <span class="xb-tab-span">交卷</span>
+            <button type="submit" form="question_form" style="display: none;">交卷</button>
+        </div>
+        <div class="xb-tab am-u-sm-4">
+            <span class="xb-tab-icon"><i class="am-icon-clock-o am-icon-sm am-icon-fw"></i></span>
+            <span class="xb-tab-span"><strong>19:59</strong></span>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="am-modal am-modal-no-btn xb-modal" tabindex="-1" id="doc-modal-1">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">答题卡
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="am-g">
+                    <div class="am-u-sm-2">
+                        <a href="#1">1</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#2">2</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#3">3</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#4">4</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#5">5</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#6">6</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#7">7</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#8">8</a>
+                    </div>
+                    <div class="am-u-sm-2">
+                        <a href="#9">9</a>
+                    </div>
+                    <div class="am-u-sm-2 am-u-end">
+                        <a href="#10">10</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/amazeui/dist/js/amazeui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script>
+    var questions = document.querySelectorAll(".xb-question-choice");
+    var question_num = document.querySelector("#question_num > strong");
+    var hash = window.location.hash;
+    var num = hash.split('#');
+    question_num.innerHTML = num[1] ? num[1] : 1;
+    var btn_close = document.querySelector(".xb-modal .am-close-spin");
+    var answer_btns = document.querySelectorAll('.xb-modal .am-modal-bd a');
+    for (var i = 0; i < answer_btns.length; i++) {
+        (function(i) {
+            answer_btns[i].addEventListener("touchstart", function(e) {
+                btn_close.click();
+            });
+        })(i);
+    }
+    for (var i = 0; i < questions.length; i++) {
+        (function(i) {
+            var radios = questions[i].querySelectorAll("input[type='checkbox']");
+            for (var j = 0; j < radios.length; j++) {
+                (function(j) {
+                    radios[j].addEventListener("change", function(e) {
+                        var parent = this.parentNode;
+                        var choice = parent.querySelector("span");
+                        // console.log(choice)
+                        if (choice.dataset.click == "false") {
+                            choice.classList.add('span-choice');
+                            choice.dataset.click = "true";
+                        } else {
+                            choice.classList.remove('span-choice');
+                            choice.dataset.click = "false";
+                        }
+                        var grandParent = parent.parentNode.parentNode.parentNode;
+                        var spanClicked = grandParent.querySelectorAll(".xb-radio span");
+                        if (spanClicked[0].dataset.click == "true" || spanClicked[1].dataset.click == "true" || spanClicked[2].dataset.click == "true" || spanClicked[3].dataset.click == "true") {
+                            grandParent.setAttribute("data-choose", "true");
+                        } else {
+                            grandParent.setAttribute("data-choose", "false");
+                        }
+                        // 关联答题卡
+                        for (var x = 0; x < answer_btns.length; x++) {
+                            (function(x) {
+                                var choose = questions[x].dataset.choose;
+                                if (choose == "true") {
+                                    answer_btns[x].classList.add("xb-active");
+                                } else {
+                                    answer_btns[x].classList.remove("xb-active");
+                                }
+                            })(x);
+                        }
+                    })
+                })(j);
+            }
+        })(i);
+    }
+    var swiper = new Swiper('.swiper-container', {
+        initialSlide: 0,
+        hashnav: true,
+        hashnavWatchState: true,
+        pagination: '.swiper-pagination',
+        paginationType: 'progress'
+    });
+    window.addEventListener("hashchange", function(e) {
+        hash = this.location.hash;
+        num = hash.split('#');
+        question_num.innerHTML = num[1];
+    })
+    var submit_form = document.querySelector("#question_submit");
+    submit_form.addEventListener("touchstart", function(e) {
+        var submit_btn = this.querySelector("button");
+        submit_btn.click();
+    })
+    </script>
+</body>
+
+</html>
