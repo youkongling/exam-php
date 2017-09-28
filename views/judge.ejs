@@ -34,7 +34,7 @@
             <div class="swiper-container swiper-container-horizontal xb-100h">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-hash="1">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="2">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="3">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="4">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="5">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -179,7 +179,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="6">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -208,7 +208,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="7">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -237,7 +237,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="8">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -266,7 +266,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="9">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -295,7 +295,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide" data-hash="10">
-                        <div class="xb-question-text"> 
+                        <div class="xb-question-text">
                             客户领取吞没卡时，吞没卡保管人员应核对吞卡原因查验身份证及业务回单，且满足以下哪些条件，领卡人签名登记后领取卡片（）
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -329,7 +329,7 @@
         </form>
     </div>
     <div class="xb-bottom am-g">
-        <div class="xb-tab am-u-sm-4" data-am-modal="{target:'#doc-modal-1'}">
+        <div class="xb-tab am-u-sm-4" id="btn-modal-span">
             <span class="xb-tab-icon"><i class="am-icon-leanpub am-icon-sm am-icon-fw"></i></span>
             <span class="xb-tab-span">答题卡</span>
         </div>
@@ -389,6 +389,11 @@
     <script src="/bower_components/amazeui/dist/js/amazeui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
     <script>
+    $(function() {
+        $('#btn-modal-span').on('click',function(){
+            $('#doc-modal-1').modal('open');
+        })
+    })
     var questions = document.querySelectorAll(".xb-question-choice");
     var question_num = document.querySelector("#question_num > strong");
     var hash = window.location.hash;
@@ -448,7 +453,7 @@
         question_num.innerHTML = num[1];
     })
     var submit_form = document.querySelector("#question_submit");
-    submit_form.addEventListener("touchstart",function(e){
+    submit_form.addEventListener("touchstart", function(e) {
         var submit_btn = this.querySelector("button");
         submit_btn.click();
     })

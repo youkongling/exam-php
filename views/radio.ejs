@@ -539,7 +539,7 @@
         </form>
     </div>
     <div class="xb-bottom am-g">
-        <div class="xb-tab am-u-sm-4" data-am-modal="{target:'#doc-modal-1'}">
+        <div class="xb-tab am-u-sm-4" id="btn-modal-span">
             <span class="xb-tab-icon"><i class="am-icon-leanpub am-icon-sm am-icon-fw"></i></span>
             <span class="xb-tab-span">答题卡</span>
         </div>
@@ -599,6 +599,11 @@
     <script src="/bower_components/amazeui/dist/js/amazeui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
     <script>
+    $(function() {
+        $('#btn-modal-span').on('click', function() {
+            $('#doc-modal-1').modal('open');
+        })
+    })
     var questions = document.querySelectorAll(".xb-question-choice");
     var question_num = document.querySelector("#question_num > strong");
     var hash = window.location.hash;
@@ -658,7 +663,7 @@
         question_num.innerHTML = num[1];
     })
     var submit_form = document.querySelector("#question_submit");
-    submit_form.addEventListener("touchstart",function(e){
+    submit_form.addEventListener("touchstart", function(e) {
         var submit_btn = this.querySelector("button");
         submit_btn.click();
     })
