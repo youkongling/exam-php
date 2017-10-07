@@ -23,7 +23,7 @@
     </header>
     <div class="am-g">
         <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
-            <dl class="am-accordion-item am-active">
+            <!-- <dl class="am-accordion-item am-active">
                 <dt class="am-accordion-title">
                     电子信息基础
                 </dt>
@@ -47,8 +47,29 @@
                         </div>
                     </div>
                 </dd>
-            </dl>
-            <dl class="am-accordion-item">
+            </dl> -->
+            <% for(var i=0 ; i<data.length ; i++){ %>
+                <dl class="am-accordion-item">
+                    <dt class="am-accordion-title">
+                        <%= data[i].examname %>
+                    </dt>
+                    <dd class="am-accordion-bd am-collapse">
+                        <div class="am-accordion-content" data-id="<%= data[i].examid %>">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" style="width: <%= data[i].score %>%;">
+                                    <strong><%= data[i].score %></strong>分
+                                </div>
+                            </div>
+                            <div class="am-g">
+                                <div class="am-u-sm-6 am-u-sm-offset-3 am-text-center">
+                                    <a href="/examList/<%= data[i].examid %>" class="am-btn am-btn-success am-round" style="padding: .5em 3em;letter-spacing: 3px;">进入考试</a>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            <% } %>
+            <!-- <dl class="am-accordion-item">
                 <dt class="am-accordion-title">
                     电子信息理论进阶
                 </dt>
@@ -97,7 +118,7 @@
                         </div>
                     </div>
                 </dd>
-            </dl>
+            </dl> -->
         </section>
     </div>
     <div class="xb-bottom am-g">

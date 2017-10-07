@@ -22,18 +22,17 @@
             <a href="#right-link" class=""></a>
         </div>
     </header>
-    <style>
 
-    </style>
     <div class="am-g xb-section">
         <span class="am-u-sm-8">单项选择题</span>
-        <span class="am-u-sm-4 am-text-right" id="question_num"><strong>1</strong>/10</span>
+        <span class="am-u-sm-4 am-text-right" id="question_num"><strong>1</strong>/<%= data.total %></span>
     </div>
+
     <div class="am-g xb-question">
         <form action="/radio" class="am-u-sm-12 xb-100h" id="question_form" method="post">
             <div class="swiper-container swiper-container-horizontal xb-100h">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" data-hash="1">
+                    <!-- <div class="swiper-slide" data-hash="1">
                         <div class="xb-question-text"> 受理网点接受客户的网上银行业务申请时，必须坚持“三核对”，其中“三核对”是指
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -82,8 +81,61 @@
                                 </label>
                             </div>
                         </div>
+                    </div> -->
+                    <% for(var i=0; i<data.question.length; i++){ %>
+                        <div class="swiper-slide" data-hash="<%= data.question[i].id %>">
+                            <div class="xb-question-text"> 
+                                <%= data.question[i].question %>
+                            </div>
+                            <div class="xb-question-choice" data-choose="false">
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <input class="" type="radio" name="doc-radio-<%= data.question[i].id %>" value="A">
+                                            <span>A</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[i].A %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <input class="" type="radio" name="doc-radio-<%= data.question[i].id %>" value="B">
+                                            <span>B</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[i].B %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <input class="" type="radio" name="doc-radio-<%= data.question[i].id %>" value="C">
+                                            <span>C</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[i].C %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <input class="" type="radio" name="doc-radio-<%= data.question[i].id %>" value="D">
+                                            <span>D</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[i].D %>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
                     </div>
-                    <div class="swiper-slide" data-hash="2">
+                    <% } %>
+                    <!-- <div class="swiper-slide" data-hash="2">
                         <div class="xb-question-text"> 受理网点接受客户的网上银行业务申请时，必须坚持“三核对”，其中“三核对”是指
                         </div>
                         <div class="xb-question-choice" data-choose="false">
@@ -532,12 +584,13 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="swiper-pagination swiper-pagination-progress"></div>
             </div>
         </form>
     </div>
+    
     <div class="xb-bottom am-g">
         <div class="xb-tab am-u-sm-4" id="btn-modal-span">
             <span class="xb-tab-icon"><i class="am-icon-leanpub am-icon-sm am-icon-fw"></i></span>
@@ -561,10 +614,12 @@
             </div>
             <div class="am-modal-bd">
                 <div class="am-g">
-                    <div class="am-u-sm-2">
-                        <a href="#1">1</a>
-                    </div>
-                    <div class="am-u-sm-2">
+                    <% for(var i=0; i<data.question.length ; i++){ %>
+                        <div class="am-u-sm-2 am-u-end">
+                            <a href="#<%= data.question[i].id %>"><%= data.question[i].id %></a>
+                        </div>
+                    <% } %>
+                    <!-- <div class="am-u-sm-2">
                         <a href="#2">2</a>
                     </div>
                     <div class="am-u-sm-2">
@@ -590,7 +645,7 @@
                     </div>
                     <div class="am-u-sm-2 am-u-end">
                         <a href="#10">10</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

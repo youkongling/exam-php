@@ -107,8 +107,15 @@ body {
     font-weight: bold;
 }
 
+.xb-question .xb-question-text strong{
+    display: inline-block;
+    float: right;
+    padding-right: 15px;
+}
+
 .xb-question .xb-question-choice {
     /*float: left;*/
+    clear: both;
     display: block;
 }
 
