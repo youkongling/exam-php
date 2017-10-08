@@ -9,26 +9,29 @@ router.get('/:id', function(req, res, next) {
     var examid = req.params.id;
     request(config.test + '-' +examid, function(error, response, body) {
         if (error) {
-            res.render('examList');
+            res.render('anwser');
         } else {
             var _body = JSON.parse(body);
-            res.render('examList', { data: _body });
+            res.render('anwser', { data: _body });
         }
     })
 });
 
 router.post('/:id', function(req, res, next) {
     var examid = req.params.id;
-    var _body = req.body;
+    var formBody = req.body;
+    // console.log(formBody);
     var result = {
-        examid : req.params.id,
-        answer : req.body
-    };
-    request.post({url : config.anwser ,form: result}, function(error, response, body){
+    	examid : req.params.id,
+    	ids : req.body
+    }
+    console.log(result)
+    request.post({url : config.test + '-' +examid ,form: result}, function(error, response, body){
+        // console.log(body);
         var _body = JSON.parse(body);
-        res.render('score', { data: _body });
+        console.log(_body);
+        res.render('anwser', { data: _body });
     })
-})
-
+});
 
 module.exports = router;

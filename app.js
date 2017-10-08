@@ -9,10 +9,10 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var examList = require('./routes/examList');
-var radio = require('./routes/radio');
-var radioAnwser = require('./routes/radioAnwser');
-var multiselect = require('./routes/multiselect');
-var judge = require('./routes/judge');
+// var radio = require('./routes/radio');
+var anwser = require('./routes/anwser');
+// var multiselect = require('./routes/multiselect');
+// var judge = require('./routes/judge');
 var score = require('./routes/score');
 
 var app = express();
@@ -33,10 +33,10 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/login', login);
 app.use('/examList', examList);
-app.use('/radio', radio);
-app.use('/radioAnwser', radioAnwser);
-app.use('/multiselect', multiselect);
-app.use('/judge', judge);
+// app.use('/radio', radio);
+app.use('/anwser', anwser);
+// app.use('/multiselect', multiselect);
+// app.use('/judge', judge);
 app.use('/score', score);
 
 // catch 404 and forward to error handler

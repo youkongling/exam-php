@@ -25,58 +25,84 @@
 
     </style>
     <div class="xb-anwser">
-        <span>答对<strong>5</strong>道题</span>
-        <span>共10道</span>
+        <span>答对<strong><%= data.success %></strong>道题</span>
+        <span>共<%= data.total %>道</span>
     </div>
     <div class="am-g xb-card">
         <div class="am-u-sm-12 xb-card-title">
             <span><i class="am-icon-leanpub am-icon-sm am-icon-fw"></i></span>
             <h2>答题卡</h2>
         </div>
+        <style>
+            .xb-card-score .xb-score-title{
+                font-size: 16px;
+                font-family: inherit;
+                font-weight: bold;
+                line-height: 20px;
+                text-align: center;
+                width: 100%;
+                padding: 10px;
+            }
+        </style>
+        
         <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
+            <div class="xb-score-title">单选题</div>
             <div class="am-g">
-                <div class="am-u-sm-2">
-                    <span class="xb-score-success">1</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-success">2</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-danger">3</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-success">4</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-success">5</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-danger">6</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-danger">7</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-success">8</span>
-                </div>
-                <div class="am-u-sm-2">
-                    <span class="xb-score-danger">9</span>
-                </div>
-                <div class="am-u-sm-2 am-u-end">
-                    <span class="xb-score-danger">10</span>
-                </div>
+                <% for(var i=0 ; i<data.result.radio.length ; i++){ %>
+                    <div class="am-u-sm-2 am-u-end">
+                        <% if(data.result.radio[i].type){ %>
+                            <span class="xb-score-success" data-id="<%= data.result.radio[i].id %>"><%= i+1 %></span>
+                        <% }else{ %>
+                            <span class="xb-score-danger" data-id="<%= data.result.radio[i].id %>"><%= i+1 %></span>
+                        <% } %>
+                    </div>
+                <% } %>
             </div>
         </div>
+        
+
+        <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
+            <div class="xb-score-title">多选题</div>
+            <div class="am-g">
+                <% for(var i=0 ; i<data.result.multiple.length ; i++){ %>
+                    <div class="am-u-sm-2 am-u-end">
+                        <% if(data.result.multiple[i].type){ %>
+                            <span class="xb-score-success" data-id="<%= data.result.multiple[i].id %>"><%= i+1 %></span>
+                        <% }else{ %>
+                            <span class="xb-score-danger" data-id="<%= data.result.multiple[i].id %>"><%= i+1 %></span>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+
     </div>
     <div class="xb-bottom am-g">
         <div class="xb-tab am-u-sm-6">
-            <a href="/radioAnwser">
+            <a href="/anwser/<%= data.examid %>" id="btn">
                 <span class="xb-tab-icon"><i class="am-icon-book am-icon-sm am-icon-fw"></i></span>
                 <span class="xb-tab-span">答案解析</span>
             </a>
+            <form action="/anwser/<%= data.examid %>" method="POST" style="display: none;">
+                <% for(var i=0 ; i<data.result.multiple.length ; i++){ %>
+                    <input type="number" value="<%= data.result.multiple[i].id %>" name="<%= data.result.multiple[i].id %>">
+                <% } %>
+                <% for(var i=0 ; i<data.result.radio.length ; i++){ %>
+                    <input type="number" value="<%= data.result.radio[i].id %>" name="<%= data.result.radio[i].id %>">
+                <% } %>
+                <button type="submit" id="submit"></button>
+            </form>
+            <script type="text/javascript">
+                var btn = document.querySelector("#btn");
+                btn.addEventListener("touchstart", function(e){
+                    e.preventDefault();
+                    var submit = document.querySelector("#submit");
+                    submit.click();
+                })
+            </script>
         </div>
         <div class="xb-tab am-u-sm-6">
-            <a href="/radio">
+            <a href="/">
                 <span class="xb-tab-icon"><i class="am-icon-sticky-note-o am-icon-sm am-icon-fw"></i></span>
                 <span class="xb-tab-span">重新考试</span>    
             </a>

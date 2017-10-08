@@ -30,7 +30,7 @@
         <span class="am-u-sm-4 am-text-right" id="question_num"><strong>1</strong>/<%= data.total %></span>
     </div>
     <div class="am-g xb-question">
-        <form action="/examList/<%= data.examid %>" class="am-u-sm-12 xb-100h" id="question_form" method="post">
+        <form class="am-u-sm-12 xb-100h">
             <div class="swiper-container swiper-container-horizontal xb-100h">
                 <div class="swiper-wrapper">
                     <% for(var i=0; i<data.question[0].radio.length ; i++){ %>
@@ -43,8 +43,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" checked type="radio" name="<%= data.question[0].radio[i].questionid %>" value="A">
-                                            <span>A</span>
+                                            <span class="<%= data.question[0].radio[i].questionanswer=='A'?'span-choice':'' %>">A</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[0].radio[i].queschoiceA %>
@@ -54,8 +53,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" type="radio" name="<%= data.question[0].radio[i].questionid %>" value="B">
-                                            <span>B</span>
+                                            <span class="<%= data.question[0].radio[i].questionanswer=='B'?'span-choice':'' %>">B</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[0].radio[i].queschoiceB %>
@@ -65,8 +63,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" type="radio" name="<%= data.question[0].radio[i].questionid %>" value="C">
-                                            <span>C</span>
+                                            <span class="<%= data.question[0].radio[i].questionanswer=='C'?'span-choice':'' %>">C</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[0].radio[i].queschoiceC %>
@@ -76,8 +73,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" type="radio" name="<%= data.question[0].radio[i].questionid %>" value="D">
-                                            <span>D</span>
+                                            <span class="<%= data.question[0].radio[i].questionanswer=='D'?'span-choice':'' %>">D</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[0].radio[i].queschoiceD %>
@@ -87,7 +83,6 @@
                             </div>
                         </div>
                     <% } %>
-                    
 
                     <% for(var j=0; j<data.question[1].multiple.length ;j++){ %>
                         <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + j + 1 %>">
@@ -96,8 +91,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" checked type="checkbox" name="<%= data.question[1].multiple[j].questionid %>" value="A">
-                                            <span data-click="false">A</span>
+                                            <span class="<%= data.question[1].multiple[j].questionanswer=='A'?'span-choice':'' %>">A</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[1].multiple[j].queschoiceA %>
@@ -107,8 +101,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" type="checkbox" name="<%= data.question[1].multiple[j].questionid %>" value="B">
-                                            <span data-click="false">B</span>
+                                            <span class="<%= data.question[1].multiple[j].questionanswer=='B'?'span-choice':'' %>">B</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[1].multiple[j].queschoiceB %>
@@ -118,8 +111,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" type="checkbox" name="<%= data.question[1].multiple[j].questionid %>" value="C">
-                                            <span data-click="false">C</span>
+                                            <span class="<%= data.question[1].multiple[j].questionanswer=='C'?'span-choice':'' %>">C</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[1].multiple[j].queschoiceC %>
@@ -129,8 +121,7 @@
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <input class="" type="checkbox" name="<%= data.question[1].multiple[j].questionid %>" value="D">
-                                            <span data-click="false">D</span>
+                                            <span class="<%= data.question[1].multiple[j].questionanswer=='D'?'span-choice':'' %>">D</span>
                                         </div>
                                         <div class="am-u-sm-11">
                                             <%= data.question[1].multiple[j].queschoiceD %>
@@ -147,22 +138,19 @@
         </form>
     </div>
     <div class="xb-bottom am-g">
-        <div class="xb-tab am-u-sm-4" id="btn-modal-span">
+        <div class="xb-tab am-u-sm-6" id="btn-modal-span">
             <span class="xb-tab-icon"><i class="am-icon-leanpub am-icon-sm am-icon-fw"></i></span>
             <span class="xb-tab-span">答题卡</span>
         </div>
-        <div class="xb-tab am-u-sm-4" id="question_submit">
-            <span class="xb-tab-icon"><i class="am-icon-calendar-minus-o am-icon-sm am-icon-fw"></i></span>
-            <span class="xb-tab-span">交卷</span>
-            <button type="submit" form="question_form" style="display: none;">交卷</button>
-        </div>
-        <div class="xb-tab am-u-sm-4">
-            <span class="xb-tab-icon"><i class="am-icon-clock-o am-icon-sm am-icon-fw"></i></span>
-            <span class="xb-tab-span"><strong>19:59</strong></span>
+        <div class="xb-tab am-u-sm-6">
+            <a href="/">
+                <span class="xb-tab-icon"><i class="am-icon-sticky-note-o am-icon-sm am-icon-fw"></i></span>
+                <span class="xb-tab-span">重新考试</span>    
+            </a>
         </div>
     </div>
     <!-- modal -->
-    <div class="am-modal am-modal-no-btn xb-modal" tabindex="-1" id="doc-modal-1" >
+    <div class="am-modal am-modal-no-btn xb-modal" tabindex="-1" id="doc-modal-1">
         <div class="am-modal-dialog">
             <div class="am-modal-hd">答题卡
                 <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
@@ -183,7 +171,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
     <script>
     $(function() {
-        $('#btn-modal-span').on('click',function(){
+        $('#btn-modal-span').on('click', function() {
             $('#doc-modal-1').modal('open');
         })
     })
@@ -201,74 +189,6 @@
             });
         })(i);
     }
-    for (var i = 0; i < questions.length; i++) {
-        (function(i) {
-            var radios = questions[i].querySelectorAll("input[type='radio']");
-            for (var j = 0; j < radios.length; j++) {
-                (function(j) {
-                    radios[j].addEventListener("change", function(e) {
-                        for (var k = 0; k < radios.length; k++) {
-                            var otherParent = radios[k].parentNode;
-                            var otherChoice = otherParent.querySelector("span");
-                            otherChoice.classList.remove('span-choice');
-                        }
-                        var parent = this.parentNode;
-                        var choice = parent.querySelector("span");
-                        choice.classList.add('span-choice');
-                        var grandParent = parent.parentNode.parentNode.parentNode;
-                        grandParent.setAttribute("data-choose", "true");
-                        // 关联答题卡
-                        for (var x = 0; x < answer_btns.length; x++) {
-                            (function(x) {
-                                var choose = questions[x].dataset.choose;
-                                if (choose == "true") {
-                                    answer_btns[x].classList.add("xb-active");
-                                } else {
-                                    answer_btns[x].classList.remove("xb-active");
-                                }
-                            })(x);
-                        }
-                    })
-                })(j);
-            }
-
-            var checkboxs = questions[i].querySelectorAll("input[type='checkbox']");
-            for (var j = 0; j < checkboxs.length; j++) {
-                (function(j) {
-                    checkboxs[j].addEventListener("change", function(e) {
-                        var parent = this.parentNode;
-                        var choice = parent.querySelector("span");
-                        // console.log(choice)
-                        if (choice.dataset.click == "false") {
-                            choice.classList.add('span-choice');
-                            choice.dataset.click = "true";
-                        } else {
-                            choice.classList.remove('span-choice');
-                            choice.dataset.click = "false";
-                        }
-                        var grandParent = parent.parentNode.parentNode.parentNode;
-                        var spanClicked = grandParent.querySelectorAll(".xb-radio span");
-                        if (spanClicked[0].dataset.click == "true" || spanClicked[1].dataset.click == "true" || spanClicked[2].dataset.click == "true" || spanClicked[3].dataset.click == "true") {
-                            grandParent.setAttribute("data-choose", "true");
-                        } else {
-                            grandParent.setAttribute("data-choose", "false");
-                        }
-                        // 关联答题卡
-                        for (var x = 0; x < answer_btns.length; x++) {
-                            (function(x) {
-                                var choose = questions[x].dataset.choose;
-                                if (choose == "true") {
-                                    answer_btns[x].classList.add("xb-active");
-                                } else {
-                                    answer_btns[x].classList.remove("xb-active");
-                                }
-                            })(x);
-                        }
-                    })
-                })(j);
-            }
-        })(i);
-    }
     var swiper = new Swiper('.swiper-container', {
         initialSlide: 0,
         hashnav: true,
@@ -280,11 +200,10 @@
         hash = this.location.hash;
         num = hash.split('#');
         question_num.innerHTML = num[1];
-    })
-    var submit_form = document.querySelector("#question_submit");
-    submit_form.addEventListener("touchstart", function(e) {
-        var submit_btn = this.querySelector("button");
-        submit_btn.click();
+        for (var x = 0; x < answer_btns.length; x++) {
+            answer_btns[x].classList.remove("xb-active");
+        }
+        answer_btns[num[1] - 1].classList.add("xb-active");
     })
     </script>
 </body>
