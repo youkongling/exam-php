@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> 首页 </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/bower_components/amazeui/dist/css/amazeui.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <header data-am-widget="header" class="am-header am-header-white">
+        <div class="am-header-left am-header-nav">
+            <a href="javascript:window.history.back();" class="">
+                <i class="am-icon-angle-left am-fr am-icon-lg"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">个人中心</h1>
+        <div class="am-header-right am-header-nav">
+            <a href="#right-link" class=""></a>
+        </div>
+    </header>
+    <style type="text/css">
+    .xb-users {
+        padding: 10px 5px;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 2px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        text-align: center;
+    }
+
+    .xb-users .am-u-sm-6 {
+        padding: 0;
+    }
+    </style>
+    <div class="xb-users">
+        <div class="am-g">
+            <div class="am-u-sm-6 am-text-right">姓名：</div>
+            <div class="am-u-sm-6 am-text-left"><strong>刘小波</strong></div>
+            <div class="am-u-sm-6 am-text-right">员工编号：</div>
+            <div class="am-u-sm-6 am-text-left"><strong>123456</strong></div>
+        </div>
+    </div>
+    <style type="text/css">
+    .xb-list .am-list {
+        margin-top: 10px;
+    }
+
+    .xb-list .am-list li {
+        margin-bottom: 10px;
+    }
+
+    .xb-list .am-list li i:last-child {
+        float: right;
+    }
+
+    .xb-list .am-list span {
+        display: inline-block;
+        padding-left: 10px;
+    }
+
+    .xb-list .am-list li a{
+        display: block;
+        padding: 0;
+        color: #000;
+    }
+    </style>
+    <div class="am-g xb-list">
+        <div class="am-u-sm-12">
+            <ul class="am-list am-list-static am-list-border">
+                <li>
+                    <a href="/scoreList">
+                        <i class="am-icon-calendar-minus-o am-icon-sm am-icon-fw"></i>
+                        <span>考试成绩</span>
+                        <i class="am-icon-angle-right am-icon-fw"></i>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="">
+                        <i class="am-icon-commenting am-icon-sm am-icon-fw"></i>
+                        <span>通知</span>
+                        <i class="am-icon-angle-right am-icon-fw"></i>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="/set">
+                        <i class="am-icon-cogs am-icon-sm am-icon-fw"></i>
+                        <span>设置</span>
+                        <i class="am-icon-angle-right am-icon-fw"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="xb-bottom am-g">
+        <div class="xb-tab am-u-sm-6">
+            <a href="javascript:window.history.back();">
+                <span class="xb-tab-icon"><i class="am-icon-wpforms am-icon-sm am-icon-fw"></i></span>
+                <span class="xb-tab-span">考试</span>
+            </a>
+        </div>
+        <div class="xb-tab am-u-sm-6">
+            <a href="#">
+                <span class="xb-tab-icon"><i class="am-icon-user am-icon-sm am-icon-fw"></i></span>
+                <span class="xb-tab-span">个人中心</span>
+            </a>
+        </div>
+    </div>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/amazeui/dist/js/amazeui.min.js"></script>
+</body>
+
+</html>

@@ -12,11 +12,11 @@
 <body>
     <header data-am-widget="header" class="am-header am-header-white">
         <div class="am-header-left am-header-nav">
-            <a href="#" class="">
+            <a href="javascript:window.history.back();" class="">
                 <i class="am-icon-angle-left am-fr am-icon-lg"></i>
             </a>
         </div>
-        <h1 class="am-header-title">参加的考试</h1>
+        <h1 class="am-header-title">考试成绩</h1>
         <div class="am-header-right am-header-nav">
             <a href="#right-link" class=""></a>
         </div>
@@ -59,36 +59,36 @@
     .xb-scorelist li a {
         position: absolute;
         right: 0px;
+        /*float: right;*/
         display: inline-block;
         padding: 0.3em 0.8em;
     }
     </style>
-    <div class="am-g">
-        <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
-            <div class="am-g xb-scorelist">
-                <div class="am-u-sm-12">
-                    <ul class="am-list am-list-static am-list-border">
-                        <% for(var i=0 ; i<data.length ; i++){ %>
-                            <li>
-                                <span><%= data[i].examname %></span>
-                                <span><strong><%= data[i].score %></strong>分</span>
-                                <a href="/examList/<%= data[i].examid %>" class="am-btn am-btn-success">考试</a>
-                            </li>
-                        <% } %>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div class="am-g xb-scorelist">
+        <div class="am-u-sm-12">
+            <ul class="am-list am-list-static am-list-border">
+                <li>
+                    <span>电子信息基础</span>
+                    <span><strong>60</strong>分</span>
+                    <a href="/examList" class="am-btn am-btn-success">重考</a>
+                </li>
+                <li>
+                    <span>电子信息理论进阶电子信息理论进阶</span>
+                    <span><strong>80</strong>分</span>
+                    <a href="/examList" class="am-btn am-btn-success">重考</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="xb-bottom am-g">
         <div class="xb-tab am-u-sm-6">
-            <a href="#">
+            <a href="/">
                 <span class="xb-tab-icon"><i class="am-icon-wpforms am-icon-sm am-icon-fw"></i></span>
                 <span class="xb-tab-span">考试</span>
             </a>
         </div>
         <div class="xb-tab am-u-sm-6">
-            <a href="/users">
+            <a href="javascript:window.history.back();">
                 <span class="xb-tab-icon"><i class="am-icon-user am-icon-sm am-icon-fw"></i></span>
                 <span class="xb-tab-span">个人中心</span>
             </a>
