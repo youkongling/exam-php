@@ -20,16 +20,13 @@ router.get('/:id', function(req, res, next) {
 router.post('/:id', function(req, res, next) {
     var examid = req.params.id;
     var formBody = req.body;
-    // console.log(formBody);
     var result = {
     	examid : req.params.id,
     	ids : req.body
     }
-    console.log(result)
     request.post({url : config.test + '-' +examid ,form: result}, function(error, response, body){
-        // console.log(JSON.stringify(body));	
+        // console.log(body)
         var _body = JSON.parse(body);
-        console.log(_body.question[0].multiple[1].questionanswer);
         res.render('anwser', { data: _body });
     })
 });

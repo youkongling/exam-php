@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> 首页 </title>
+    <title> 上饶农商考试系统 </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="/bower_components/amazeui/dist/css/amazeui.min.css">
@@ -39,9 +39,9 @@
     <div class="xb-users">
         <div class="am-g">
             <div class="am-u-sm-6 am-text-right">姓名：</div>
-            <div class="am-u-sm-6 am-text-left"><strong>刘小波</strong></div>
+            <div class="am-u-sm-6 am-text-left"><strong><%= data.name %></strong></div>
             <div class="am-u-sm-6 am-text-right">员工编号：</div>
-            <div class="am-u-sm-6 am-text-left"><strong>123456</strong></div>
+            <div class="am-u-sm-6 am-text-left"><strong><%= data.number %></strong></div>
         </div>
     </div>
     <style type="text/css">
@@ -72,7 +72,7 @@
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
                 <li>
-                    <a href="/scoreList">
+                    <a href="/scoreList/<%= data.userid %>">
                         <i class="am-icon-calendar-minus-o am-icon-sm am-icon-fw"></i>
                         <span>考试成绩</span>
                         <i class="am-icon-angle-right am-icon-fw"></i>

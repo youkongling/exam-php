@@ -22,61 +22,18 @@
         </div>
     </header>
     <style type="text/css">
-    .xb-scorelist {
-        height: calc(100% - 101px);
-        overflow: hidden;
-        position: relative;
-        overflow-y: scroll;
-    }
-
-    .xb-scorelist .am-list {
-        margin-top: 10px;
-    }
-
-    .xb-scorelist .am-list li {
-        margin-bottom: 10px;
-        border: none;
-        border-bottom: 1px solid #dedede;
-        position: relative;
-    }
-
-    .xb-scorelist .am-list span {
-        display: inline-block;
-        margin-bottom: 6px;
-    }
-
-    .xb-scorelist .am-list span:nth-child(1) {
-        font-weight: bold;
-        width: 200px;
-        word-wrap: 200px;
-    }
-
-    .xb-scorelist .am-list span:nth-child(2) {
-        position: absolute;
-        right: 80px;
-    }
-
-    .xb-scorelist li a {
-        position: absolute;
-        right: 0px;
-        /*float: right;*/
-        display: inline-block;
-        padding: 0.3em 0.8em;
-    }
+    
     </style>
     <div class="am-g xb-scorelist">
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
-                <li>
-                    <span>电子信息基础</span>
-                    <span><strong>60</strong>分</span>
-                    <a href="/examList" class="am-btn am-btn-success">重考</a>
-                </li>
-                <li>
-                    <span>电子信息理论进阶电子信息理论进阶</span>
-                    <span><strong>80</strong>分</span>
-                    <a href="/examList" class="am-btn am-btn-success">重考</a>
-                </li>
+                <% for( var i=0 ; i<data.examlist.length ; i++){ %>
+                    <li>
+                        <span><%= data.examlist[i].examname %></span>
+                        <span><strong><%= data.examlist[i].score %></strong>分</span>
+                        <a href="/examList/<%= data.examlist[i].examid %>" class="am-btn am-btn-success">重考</a>
+                    </li>
+                    <% } %>
             </ul>
         </div>
     </div>

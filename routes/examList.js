@@ -19,13 +19,16 @@ router.get('/:id', function(req, res, next) {
 
 router.post('/:id', function(req, res, next) {
     var examid = req.params.id;
+    var _cookie = req.cookies;
     var _body = req.body;
     var result = {
         examid : req.params.id,
-        answer : req.body
+        answer : req.body,
+        userid : _cookie.userid
     };
     request.post({url : config.anwser ,form: result}, function(error, response, body){
         var _body = JSON.parse(body);
+        // console.log(body)
         res.render('score', { data: _body });
     })
 })

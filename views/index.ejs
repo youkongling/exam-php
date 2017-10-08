@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> 首页 </title>
+    <title> 上饶农商考试系统 </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="/bower_components/amazeui/dist/css/amazeui.min.css">
@@ -22,46 +22,7 @@
         </div>
     </header>
     <style type="text/css">
-    .xb-scorelist {
-        height: calc(100% - 101px);
-        overflow: hidden;
-        position: relative;
-        overflow-y: scroll;
-    }
 
-    .xb-scorelist .am-list {
-        margin-top: 10px;
-    }
-
-    .xb-scorelist .am-list li {
-        margin-bottom: 10px;
-        border: none;
-        border-bottom: 1px solid #dedede;
-        position: relative;
-    }
-
-    .xb-scorelist .am-list span {
-        display: inline-block;
-        margin-bottom: 6px;
-    }
-
-    .xb-scorelist .am-list span:nth-child(1) {
-        font-weight: bold;
-        width: 200px;
-        word-wrap: 200px;
-    }
-
-    .xb-scorelist .am-list span:nth-child(2) {
-        position: absolute;
-        right: 80px;
-    }
-
-    .xb-scorelist li a {
-        position: absolute;
-        right: 0px;
-        display: inline-block;
-        padding: 0.3em 0.8em;
-    }
     </style>
     <div class="am-g">
         <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
@@ -71,7 +32,6 @@
                         <% for(var i=0 ; i<data.length ; i++){ %>
                             <li>
                                 <span><%= data[i].examname %></span>
-                                <span><strong><%= data[i].score %></strong>分</span>
                                 <a href="/examList/<%= data[i].examid %>" class="am-btn am-btn-success">考试</a>
                             </li>
                         <% } %>

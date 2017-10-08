@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.render('users', {});
+    var _cookie = req.cookies;
+    res.render('users', { data: _cookie });
 });
 
 module.exports = router;

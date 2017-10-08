@@ -5,20 +5,30 @@ var request = require('request');
 var config = require('../config/config');
 // console.log(config);
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
-    request(config.list, function(error, response, body) {
+    var _cookie = req.cookies;
+    // console.log(_cookie);
+    if (_cookie.jobid) {
+        res.redirect('/index/' + _cookie.jobid);
+    } else {
+        res.redirect('/login');
+    }
+})
+
+/* GET home page. */
+router.get('/index/:id', function(req, res, next) {
+    var _cookie = req.cookies;
+    // console.log(_cookie);
+    var id = req.params.id;
+    request(config.list + '-' + id, function(error, response, body) {
         if (error) {
-            // console.log(error)
             res.render('index');
         } else {
             var _body = JSON.parse(body)
-            // console.log(_body.data)
-            res.render('index', { data: _body.data });
+            res.render('index', { data: _body.data, cookie: _cookie.number });
         }
     })
-
-    // res.render('index', { title: 'Express' });
 });
 
 module.exports = router;

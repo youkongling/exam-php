@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>考试系统</title>
+    <title>上饶农商考试系统</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="/bower_components/amazeui/dist/css/amazeui.min.css">
@@ -26,7 +26,7 @@
 
     </style>
     <div class="am-g xb-section">
-        <span class="am-u-sm-8">选择题</span>
+        <span class="am-u-sm-8" id="testTitle">单选题</span>
         <span class="am-u-sm-4 am-text-right" id="question_num"><strong>1</strong>/<%= data.total %></span>
     </div>
     <div class="am-g xb-question">
@@ -37,7 +37,7 @@
                         <div class="swiper-slide" data-hash="<%= i + 1 %>">
                             <div class="xb-question-text"> 
                             <%= data.question[0].radio[i].question %>
-                            <strong>(<%= data.question[0].radio[i].questiontype %>)</strong>
+                            <strong><%= data.question[0].radio[i].questiontype %></strong>
                             </div>
                             <div class="xb-question-choice" data-choose="false">
                                 <div class="am-g xb-question-15b">
@@ -86,7 +86,7 @@
 
                     <% for(var j=0; j<data.question[0].multiple.length ;j++){ %>
                         <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + j + 1 %>">
-                            <div class="xb-question-text"> <%= data.question[0].multiple[j].question %><strong>(<%= data.question[0].multiple[j].questiontype %>)</strong></div>
+                            <div class="xb-question-text"> <%= data.question[0].multiple[j].question %><strong><%= data.question[0].multiple[j].questiontype %></strong></div>
                             <div class="xb-question-choice" data-choose="false">
                                 <div class="am-g xb-question-15b">
                                     <label>
@@ -167,7 +167,7 @@
             <span class="xb-tab-span">答题卡</span>
         </div>
         <div class="xb-tab am-u-sm-6">
-            <a href="/">
+            <a href="/examList/<%= data.examid %>">
                 <span class="xb-tab-icon"><i class="am-icon-sticky-note-o am-icon-sm am-icon-fw"></i></span>
                 <span class="xb-tab-span">重新考试</span>    
             </a>
@@ -228,6 +228,9 @@
             answer_btns[x].classList.remove("xb-active");
         }
         answer_btns[num[1] - 1].classList.add("xb-active");
+        var slides = document.querySelectorAll('.swiper-slide > .xb-question-text > strong');
+        var testTitle = document.querySelector('#testTitle');
+        testTitle.innerHTML = slides[ num[1]-1 ].innerHTML;
     })
     </script>
 </body>
