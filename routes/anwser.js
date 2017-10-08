@@ -27,9 +27,9 @@ router.post('/:id', function(req, res, next) {
     }
     console.log(result)
     request.post({url : config.test + '-' +examid ,form: result}, function(error, response, body){
-        // console.log(body);
+        // console.log(JSON.stringify(body));	
         var _body = JSON.parse(body);
-        console.log(_body);
+        console.log(_body.question[0].multiple[1].questionanswer);
         res.render('anwser', { data: _body });
     })
 });

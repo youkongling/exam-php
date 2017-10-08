@@ -84,47 +84,71 @@
                         </div>
                     <% } %>
 
-                    <% for(var j=0; j<data.question[1].multiple.length ;j++){ %>
+                    <% for(var j=0; j<data.question[0].multiple.length ;j++){ %>
                         <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + j + 1 %>">
-                            <div class="xb-question-text"> <%= data.question[1].multiple[j].question %><strong>(<%= data.question[1].multiple[j].questiontype %>)</strong></div>
+                            <div class="xb-question-text"> <%= data.question[0].multiple[j].question %><strong>(<%= data.question[0].multiple[j].questiontype %>)</strong></div>
                             <div class="xb-question-choice" data-choose="false">
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <span class="<%= data.question[1].multiple[j].questionanswer=='A'?'span-choice':'' %>">A</span>
+                                            <span class="
+                                                <% for(var k=0 ; k<data.question[0].multiple[j].questionanswer.length ; k++){ %>
+                                                    <% if(data.question[0].multiple[j].questionanswer[k] == 'A'){ %>
+                                                        span-choice
+                                                    <% } %>
+                                                <% }%>
+                                            ">A</span>
                                         </div>
                                         <div class="am-u-sm-11">
-                                            <%= data.question[1].multiple[j].queschoiceA %>
+                                            <%= data.question[0].multiple[j].queschoiceA %>
                                         </div>
                                     </label>
                                 </div>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <span class="<%= data.question[1].multiple[j].questionanswer=='B'?'span-choice':'' %>">B</span>
+                                            <span class="
+                                                <% for(var k=0 ; k<data.question[0].multiple[j].questionanswer.length ; k++){ %>
+                                                    <% if(data.question[0].multiple[j].questionanswer[k] == 'B'){ %>
+                                                        span-choice
+                                                    <% } %>
+                                                <% }%>
+                                            ">B</span>
                                         </div>
                                         <div class="am-u-sm-11">
-                                            <%= data.question[1].multiple[j].queschoiceB %>
+                                            <%= data.question[0].multiple[j].queschoiceB %>
                                         </div>
                                     </label>
                                 </div>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <span class="<%= data.question[1].multiple[j].questionanswer=='C'?'span-choice':'' %>">C</span>
+                                            <span class="
+                                                <% for(var k=0 ; k<data.question[0].multiple[j].questionanswer.length ; k++){ %>
+                                                    <% if(data.question[0].multiple[j].questionanswer[k] == 'C'){ %>
+                                                        span-choice
+                                                    <% } %>
+                                                <% }%>
+                                            ">C</span>
                                         </div>
                                         <div class="am-u-sm-11">
-                                            <%= data.question[1].multiple[j].queschoiceC %>
+                                            <%= data.question[0].multiple[j].queschoiceC %>
                                         </div>
                                     </label>
                                 </div>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
-                                            <span class="<%= data.question[1].multiple[j].questionanswer=='D'?'span-choice':'' %>">D</span>
+                                            <span class="
+                                                <% for(var k=0 ; k<data.question[0].multiple[j].questionanswer.length ; k++){ %>
+                                                    <% if(data.question[0].multiple[j].questionanswer[k] == 'D'){ %>
+                                                        span-choice
+                                                    <% } %>
+                                                <% }%>
+                                            ">D</span>
                                         </div>
                                         <div class="am-u-sm-11">
-                                            <%= data.question[1].multiple[j].queschoiceD %>
+                                            <%= data.question[0].multiple[j].queschoiceD %>
                                         </div>
                                     </label>
                                 </div>
