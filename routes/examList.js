@@ -12,7 +12,7 @@ router.get('/:id', function(req, res, next) {
             res.render('examList');
         } else {
             var _body = JSON.parse(body);
-            console.log(_body)
+            console.log(_body.question[1].multiple[0])
             res.render('examList', { data: _body });
         }
     })

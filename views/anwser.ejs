@@ -40,6 +40,7 @@
                             <strong><%= data.question[0].radio[i].questiontype %></strong>
                             </div>
                             <div class="xb-question-choice" data-choose="false">
+                                <% if(data.question[0].radio[i].queschoiceA){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -50,6 +51,8 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
+                                <% if(data.question[0].radio[i].queschoiceB){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -60,6 +63,8 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
+                                <% if(data.question[0].radio[i].queschoiceC){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -70,6 +75,8 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
+                                <% if(data.question[0].radio[i].queschoiceD){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -80,6 +87,7 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
                             </div>
                         </div>
                     <% } %>
@@ -88,6 +96,7 @@
                         <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + j + 1 %>">
                             <div class="xb-question-text"> <%= data.question[0].multiple[j].question %><strong><%= data.question[0].multiple[j].questiontype %></strong></div>
                             <div class="xb-question-choice" data-choose="false">
+                                <% if(data.question[0].multiple[j].queschoiceA){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -104,6 +113,8 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
+                                <% if(data.question[0].multiple[j].queschoiceB){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -120,6 +131,8 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
+                                <% if(data.question[0].multiple[j].queschoiceC){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -136,6 +149,8 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
+                                <% if(data.question[0].multiple[j].queschoiceD){ %>
                                 <div class="am-g xb-question-15b">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
@@ -152,6 +167,7 @@
                                         </div>
                                     </label>
                                 </div>
+                                <% } %>
                             </div>
                         </div>
                     <% } %>
