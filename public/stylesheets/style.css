@@ -35,7 +35,8 @@ body {
     width: auto;
 }
 
-.xb-tab strong {
+.xb-tab strong ,
+.xb-tab strong clock {
     color: #5eb95e;
 }
 
@@ -359,4 +360,3 @@ body {
     display: inline-block;
     padding: 0.3em 0.8em;
 }
-

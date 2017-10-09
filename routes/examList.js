@@ -7,11 +7,12 @@ var config = require('../config/config');
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
     var examid = req.params.id;
-    request(config.test + '-' +examid, function(error, response, body) {
+    request(config.test + '-' + examid, function(error, response, body) {
         if (error) {
             res.render('examList');
         } else {
             var _body = JSON.parse(body);
+            console.log(_body)
             res.render('examList', { data: _body });
         }
     })
@@ -22,11 +23,11 @@ router.post('/:id', function(req, res, next) {
     var _cookie = req.cookies;
     var _body = req.body;
     var result = {
-        examid : req.params.id,
-        answer : req.body,
-        userid : _cookie.userid
+        examid: req.params.id,
+        answer: req.body,
+        userid: _cookie.userid
     };
-    request.post({url : config.anwser ,form: result}, function(error, response, body){
+    request.post({ url: config.anwser, form: result }, function(error, response, body) {
         var _body = JSON.parse(body);
         // console.log(body)
         res.render('score', { data: _body });

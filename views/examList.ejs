@@ -158,8 +158,37 @@
         </div>
         <div class="xb-tab am-u-sm-4">
             <span class="xb-tab-icon"><i class="am-icon-clock-o am-icon-sm am-icon-fw"></i></span>
-            <span class="xb-tab-span"><strong>19:59</strong></span>
+            <span class="xb-tab-span"><strong id="testTime"><clock><%= data.time %></clock> : <clock>00</clock></strong></span>
         </div>
+        <script type="text/javascript">
+        var testTime = document.querySelectorAll("#testTime > clock");
+        var hour = parseInt(testTime[0].innerHTML);
+        var minute = parseInt(testTime[1].innerHTML);
+        var timer = window.setInterval(function() {
+            if (minute > 0) {
+                if (minute >= 10) {
+                    testTime[1].innerHTML = --minute;
+                } else {
+                    testTime[1].innerHTML = '0' + --minute;
+                }
+            } else {
+                if (hour > 0) {
+                    if (hour > 10) {
+                        testTime[0].innerHTML = --hour;
+                        minute = 59;
+                        testTime[1].innerHTML = minute;
+                    } else {
+                        testTime[0].innerHTML = '0' + --hour;
+                        minute = 59;
+                        testTime[1].innerHTML = minute;
+                    }
+                } else {
+                    var formBtn = document.querySelector('#question_submit > button');
+                    formBtn.click();
+                }
+            }
+        }, 1000);
+        </script>
     </div>
     <!-- modal -->
     <div class="am-modal am-modal-no-btn xb-modal" tabindex="-1" id="doc-modal-1">
@@ -284,7 +313,7 @@
         question_num.innerHTML = num[1];
         var slides = document.querySelectorAll('.swiper-slide > .xb-question-text > strong');
         var testTitle = document.querySelector('#testTitle');
-        testTitle.innerHTML = slides[ num[1]-1 ].innerHTML;
+        testTitle.innerHTML = slides[num[1] - 1].innerHTML;
     })
     var submit_form = document.querySelector("#question_submit");
     submit_form.addEventListener("touchstart", function(e) {
