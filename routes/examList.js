@@ -12,7 +12,6 @@ router.get('/:id', function(req, res, next) {
             res.render('examList');
         } else {
             var _body = JSON.parse(body);
-            console.log(_body.question[1].multiple[0])
             res.render('examList', { data: _body });
         }
     })
@@ -27,6 +26,7 @@ router.post('/:id', function(req, res, next) {
         answer: req.body,
         userid: _cookie.userid
     };
+    console.log(result)
     request.post({ url: config.anwser, form: result }, function(error, response, body) {
         var _body = JSON.parse(body);
         // console.log(body)

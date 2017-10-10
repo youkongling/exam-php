@@ -33,6 +33,7 @@
         <form action="/examList/<%= data.examid %>" class="am-u-sm-12 xb-100h" id="question_form" method="post">
             <div class="swiper-container swiper-container-horizontal xb-100h">
                 <div class="swiper-wrapper">
+                    <% if(data.question[0]){ %>
                     <% for(var i=0; i<data.question[0].radio.length ; i++){ %>
                         <div class="swiper-slide" data-hash="<%= i + 1 %>">
                             <div class="xb-question-text">
@@ -42,7 +43,7 @@
                             <div class="xb-question-choice" data-choose="false">
                                 <% if(data.question[0].radio[i].queschoiceA){ %>
                                 <div class="am-g xb-question-15b">
-                                    <input type="checkbox" style="display: none;" checked name="<%= data.question[0].radio[i].questionid %>">
+                                    <input type="checkbox" style="display: none;" value="" checked name="<%= data.question[0].radio[i].questionid %>">
                                     <label>
                                         <div class="am-u-sm-1 xb-radio">
                                             <input class="" type="radio" name="<%= data.question[0].radio[i].questionid %>" value="A">
@@ -96,6 +97,8 @@
                             </div>
                         </div>
                         <% } %>
+                    <% } %>
+                            <% if(data.question[1]){ %>
                             <% for(var j=0; j<data.question[1].multiple.length ;j++){ %>
                                 <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + j + 1 %>">
                                     <div class="xb-question-text">
@@ -103,7 +106,7 @@
                                     <div class="xb-question-choice" data-choose="false">
                                         <% if(data.question[1].multiple[j].queschoiceA){ %>
                                         <div class="am-g xb-question-15b">
-                                            <input type="checkbox" style="display: none;" checked name="<%= data.question[1].multiple[j].questionid %>">
+                                            <input type="checkbox" value="" style="display: none;" checked name="<%= data.question[1].multiple[j].questionid %>">
                                             <label>
                                                 <div class="am-u-sm-1 xb-radio">
                                                     <input class="" type="checkbox" name="<%= data.question[1].multiple[j].questionid %>" value="A">
@@ -157,6 +160,7 @@
                                     </div>
                                 </div>
                                 <% } %>
+                            <% } %>
                 </div>
                 <div class="swiper-pagination swiper-pagination-progress"></div>
             </div>
