@@ -29,7 +29,7 @@ router.post('/:id', function(req, res, next) {
     console.log(result)
     request.post({ url: config.anwser, form: result }, function(error, response, body) {
         var _body = JSON.parse(body);
-        // console.log(body)
+        console.log(body)
         res.render('score', { data: _body });
     })
 })

@@ -48,6 +48,7 @@
         <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
             <div class="xb-score-title">单选题</div>
             <div class="am-g">
+                <% if(data.result.radio){ %>
                 <% for(var i=0 ; i<data.result.radio.length ; i++){ %>
                     <div class="am-u-sm-2 am-u-end">
                         <% if(data.result.radio[i].type){ %>
@@ -57,6 +58,7 @@
                         <% } %>
                     </div>
                 <% } %>
+                <% } %>
             </div>
         </div>
         
@@ -64,6 +66,7 @@
         <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
             <div class="xb-score-title">多选题</div>
             <div class="am-g">
+                <% if(data.result.multiple){ %>
                 <% for(var i=0 ; i<data.result.multiple.length ; i++){ %>
                     <div class="am-u-sm-2 am-u-end">
                         <% if(data.result.multiple[i].type){ %>
@@ -72,6 +75,7 @@
                             <span class="xb-score-danger" data-id="<%= data.result.multiple[i].id %>"><%= i+1 %></span>
                         <% } %>
                     </div>
+                <% } %>
                 <% } %>
             </div>
         </div>
@@ -84,11 +88,15 @@
                 <span class="xb-tab-span">答案解析</span>
             </a>
             <form action="/anwser/<%= data.examid %>" method="POST" style="display: none;">
+                <% if(data.result.multiple){ %>
                 <% for(var i=0 ; i<data.result.multiple.length ; i++){ %>
                     <input type="number" value="<%= data.result.multiple[i].id %>" name="<%= data.result.multiple[i].id %>">
                 <% } %>
+                <% } %>
+                <% if(data.result.radio){ %>
                 <% for(var i=0 ; i<data.result.radio.length ; i++){ %>
                     <input type="number" value="<%= data.result.radio[i].id %>" name="<%= data.result.radio[i].id %>">
+                <% } %>
                 <% } %>
                 <button type="submit" id="submit"></button>
             </form>
