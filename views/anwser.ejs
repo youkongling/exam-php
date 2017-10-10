@@ -33,6 +33,7 @@
         <form class="am-u-sm-12 xb-100h">
             <div class="swiper-container swiper-container-horizontal xb-100h">
                 <div class="swiper-wrapper">
+                    <% if(data.question[0].radio){ %>
                     <% for(var i=0; i<data.question[0].radio.length ; i++){ %>
                         <div class="swiper-slide" data-hash="<%= i + 1 %>">
                             <div class="xb-question-text"> 
@@ -91,7 +92,9 @@
                             </div>
                         </div>
                     <% } %>
+                    <% } %>
 
+                    <% if(data.question[0].multiple){ %>
                     <% for(var j=0; j<data.question[0].multiple.length ;j++){ %>
                         <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + j + 1 %>">
                             <div class="xb-question-text"> <%= data.question[0].multiple[j].question %><strong><%= data.question[0].multiple[j].questiontype %></strong></div>
@@ -170,6 +173,7 @@
                                 <% } %>
                             </div>
                         </div>
+                    <% } %>
                     <% } %>
                     
                 </div>
