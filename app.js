@@ -12,7 +12,7 @@ var examList = require('./routes/examList');
 var anwser = require('./routes/anwser');
 var score = require('./routes/score');
 var scoreList = require('./routes/scoreList');
-var set = require('./routes/set');
+var knowledge = require('./routes/knowledge');
 
 var app = express();
 
@@ -35,7 +35,7 @@ app.use('/examList', examList);
 app.use('/anwser', anwser);
 app.use('/score', score);
 app.use('/scoreList', scoreList);
-app.use('/set', set);
+app.use('/knowledge', knowledge);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

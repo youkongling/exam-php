@@ -10,16 +10,17 @@ router.get('/', function(req, res, next) {
     var _cookie = req.cookies;
     // console.log(_cookie);
     if (_cookie.jobid) {
-        res.redirect('/index/' + _cookie.jobid);
+        // res.redirect('/index/' + _cookie.jobid);
+        res.redirect('/users');
     } else {
         res.redirect('/login');
     }
 });
 
 router.get('/confirm/:id', function(req, res, next) {
-    var userid = req.params.id;
+    var openid = req.params.id;
     // console.log(userid);
-    request(config.openid + userid, function(error, response, body) {
+    request(config.openid + openid, function(error, response, body) {
         if (error) {
             res.render('/');
         } else {
@@ -27,10 +28,10 @@ router.get('/confirm/:id', function(req, res, next) {
             var cookie = {
                 jobid: _body.jobid,
                 name: _body.name,
-                userid: _body.userid,
+                userid: _body.id,
                 number: _body.number,
                 status: _body.status,
-                openid: userid
+                openid: openid
             };
             if (cookie.status == 200) {
                 res.cookie('jobid', cookie.jobid);
@@ -40,7 +41,7 @@ router.get('/confirm/:id', function(req, res, next) {
                 res.cookie('opneid', cookie.openid);
                 res.redirect('/');
             } else {
-                res.cookie('openid', userid);
+                res.cookie('openid', openid);
                 res.redirect('/login');
             }
         }
