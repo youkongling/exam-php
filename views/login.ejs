@@ -10,28 +10,244 @@
 </head>
 
 <body>
-    <div class="am-g xb-100h">
-        <div class="am-u-sm-8 am-u-sm-offset-2 xb-100h">
-            <form class="am-form am-vertical-align xb-100h" action="/login" method="post">
+    <style>
+    @media screen and (max-height: 500px) {
+        .xb-login .login-ft {
+            position: relative !important;
+            top: 20px !important;
+            margin-bottom: 20px;
+            z-index: 1;
+            clear: both;
+        }
+    }
+
+    .xb-login {
+        position: relative;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .xb-login .am-u-sm-8 {
+        position: relative;
+        z-index: 2;
+    }
+
+    .xb-login .login-bg {
+        position: relative;
+        height: 110px;
+        background-color: #265F18;
+        z-index: 1;
+    }
+
+    .xb-login .login-bg .login-text {
+        width: 100%;
+        position: relative;
+    }
+
+    .xb-login .login-bg .login-text img {
+        width: 58%;
+        position: absolute;
+        right: 10px;
+        top: 30px;
+    }
+
+    .xb-login .login-ft {
+        position: absolute;
+        bottom: 20px;
+        z-index: 1;
+    }
+
+    .xb-login .login-ft .login-text {
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+
+    .xb-login .login-ft .login-text img {
+        width: 40%;
+    }
+
+    .xb-login .am-text-center {
+        color: #265F18;
+        font-size: 26px;
+    }
+
+    .xb-login .am-btn-success {
+        background-color: #265F18;
+    }
+
+    .xb-login-modal {}
+
+    .xb-login-modal .am-modal-hd {
+        background-color: #265F18;
+        padding-top: 5px;
+        color: #FFF;
+    }
+
+    .xb-login-modal .am-modal-hd a {
+        color: #FFF;
+        opacity: 0.6;
+    }
+
+    .xb-login-modal .xb-userMsg {
+        padding-top: 10px;
+    }
+
+    .xb-login-modal .xb-userMsg-item {
+        display: none;
+    }
+
+    .xb-login-modal .xb-userMsg-item-show {
+        display: block;
+    }
+
+    .xb-login-modal .xb-userMsg .xb-userMsg-btn {
+        padding-top: 15px;
+    }
+
+    .xb-login-modal .xb-userMsg .xb-userMsg-btn .xb-mg-left {
+        padding-left: 5px;
+    }
+
+    .xb-login-modal .xb-userMsg .am-text-center {
+        color: #000;
+        font-size: 20px;
+    }
+
+    .xb-login .login-body {
+        position: relative;
+        top: 10px;
+        z-index: 2;
+    }
+    </style>
+    <div class="am-g xb-100h xb-login">
+        <div class="am-u-sm-12 login-bg">
+            <div class="login-text">
+                <img src="/images/icon.jpg" alt="">
+            </div>
+        </div>
+        <div class="am-u-sm-8 am-u-sm-offset-2 login-body am-u-end">
+            <form class="am-form am-vertical-align am-text-center" action="/login" method="post">
                 <fieldset class="am-vertical-align-middle">
-                    <legend class="am-text-center">欢迎登录</legend>
-                    <div class="am-form-group">
+                    <legend class="am-text-center">员工绑定</legend>
+                    <div class="am-form-group am-text-left">
                         <label for="worker_num">职工编号</label>
                         <input type="number" class="" id="number" name="number" placeholder="100365">
                     </div>
-                    <div class="am-form-group">
+                    <div class="am-form-group am-text-left">
                         <label for="worker_name">姓名</label>
                         <input type="text" class="" id="name" name="name" placeholder="小波">
                     </div>
+                    <div style="display: none;">
+                        <input type="number" id="openid" name="openid" value="<%= openid %>">
+                    </div>
                     <div class="am-u-sm-8 am-u-sm-offset-2 am-text-center">
-                        <button type="submit" class="am-btn am-btn-secondary">登录</button>
+                        <button type="submit" id="login_submit" style="display: none;" class="am-btn am-btn-success">绑定</button>
+                        <button type="button" id="login_btn" class="am-btn am-btn-success">绑定</button>
                     </div>
                 </fieldset>
             </form>
         </div>
+        <div class="am-u-sm-12 login-ft">
+            <div class="login-text">
+                <img src="/images/font.jpg" alt="">
+            </div>
+        </div>
+        <div class="am-modal am-modal-no-btn xb-login-modal" tabindex="-1" id="login_modal">
+            <div class="am-modal-dialog">
+                <div class="am-modal-hd">信息确认
+                    <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+                </div>
+                <div class="am-modal-bd">
+                    <div class="am-g xb-userMsg">
+                        <div class="am-u-sm-12 xb-userMsg-item">
+                            <div class="am-u-sm-6 am-text-right xb-item-key"></div>
+                            <div class="am-u-sm-6 am-text-left xb-item-value"></div>
+                        </div>
+                        <div class="am-u-sm-12 xb-userMsg-item">
+                            <div class="am-u-sm-6 am-text-right xb-item-key"></div>
+                            <div class="am-u-sm-6 am-text-left xb-item-value"></div>
+                        </div>
+                        <div class="am-u-sm-12 xb-userMsg-item">
+                            <div class="am-u-sm-6 am-text-right xb-item-key"></div>
+                            <div class="am-u-sm-6 am-text-left xb-item-value"></div>
+                        </div>
+                        <div class="am-u-sm-12 am-text-center"></div>
+                        <div class="am-u-sm-12 xb-userMsg-btn">
+                            <div class="am-u-sm-4 am-u-sm-offset-2 xb-mg-left">
+                                <button type="button" id="modal_btn_close" class="am-btn am-btn-default">取消</button>
+                            </div>
+                            <div class="am-u-sm-4 am-u-end">
+                                <button type="button" id="modal_btn_submit" class="am-btn am-btn-success">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/amazeui/dist/js/amazeui.min.js"></script>
+    <script type="text/javascript">
+    $("#login_btn").on("click", function() {
+        var data = {
+            username: document.querySelector("#name").value,
+            staffid: document.querySelector("#number").value,
+            openid: "<%= openid %>"
+        };
+
+        $.ajax({
+            url: "http://exam.liuhongbo.cn/login/confirm",
+            method: "POST",
+            data: data,
+            success: function(res) {
+                var _res = [{
+                    key: "职工编号",
+                    value: res.staffid
+                }, {
+                    key: "姓名",
+                    value: res.username
+                }, {
+                    key: "公司职位",
+                    value: res.userjob
+                }];
+                if (res.status == 200) {
+                    var items = document.querySelectorAll(".xb-userMsg > .xb-userMsg-item");
+                    for (var i = 0; i < items.length; i++) {
+                        items[i].classList.add("xb-userMsg-item-show");
+                        items[i].querySelector(".xb-item-key").innerHTML = _res[i].key;
+                        items[i].querySelector(".xb-item-value").innerHTML = _res[i].value;
+                    }
+                    var text = document.querySelector(".xb-userMsg > .am-text-center");
+                    text.innerHTML = "";
+                } else {
+                    var items = document.querySelectorAll(".xb-userMsg > .xb-userMsg-item");
+                    for (var i = 0; i < items.length; i++) {
+                        items[i].classList.remove("xb-userMsg-item-show");
+                    }
+                    var text = document.querySelector(".xb-userMsg > .am-text-center");
+                    text.innerHTML = res.msg;
+
+                    document.querySelector("#name").value = "";
+                    document.querySelector("#number").value = "";
+                }
+
+                $("#login_modal").modal('open');
+            },
+            error: function(err) {
+                console.log(err);
+                $("#login_modal").modal('open');
+            }
+        });
+    });
+    // $("#login_btn").click();
+    $("#modal_btn_close").on("click", function() {
+        $("#login_modal").modal('close');
+    })
+    $("#modal_btn_submit").on("click", function() {
+        $("#login_submit").click();
+    })
+    </script>
 </body>
 
 </html>

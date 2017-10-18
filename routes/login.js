@@ -5,7 +5,8 @@ var config = require('../config/config');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('login');
+    var openid = req.cookies.openid;
+    res.render('login', { openid: openid });
 });
 
 router.get('/out', function(req, res, next) {
@@ -18,7 +19,7 @@ router.get('/out', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
     var formBody = req.body;
-    console.log(formBody)
+    // console.log(formBody)
     request.post({ url: config.user, form: formBody }, function(error, response, body) {
         var _body = JSON.parse(body);
         if (_body == 0) {
@@ -32,5 +33,16 @@ router.post('/', function(req, res, next) {
         }
     });
 });
+
+router.post('/confirm', function(req, res, next) {
+    var formBody = req.body;
+    console.log(formBody);
+    request.post({ url: config.confirm, form: formBody }, function(error, response, body) {
+        console.log(body);
+        var _body = JSON.parse(body);
+        res.send(_body);
+    });
+    // res.send(formBody);
+})
 
 module.exports = router;

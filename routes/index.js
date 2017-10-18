@@ -14,7 +14,39 @@ router.get('/', function(req, res, next) {
     } else {
         res.redirect('/login');
     }
-})
+});
+
+router.get('/confirm/:id', function(req, res, next) {
+    var userid = req.params.id;
+    // console.log(userid);
+    request(config.openid + userid, function(error, response, body) {
+        if (error) {
+            res.render('/');
+        } else {
+            var _body = JSON.parse(body);
+            var cookie = {
+                jobid: _body.jobid,
+                name: _body.name,
+                userid: _body.userid,
+                number: _body.number,
+                status: _body.status,
+                openid: userid
+            };
+            if (cookie.status == 200) {
+                res.cookie('jobid', cookie.jobid);
+                res.cookie('userid', cookie.userid);
+                res.cookie('number', cookie.number);
+                res.cookie('name', cookie.name);
+                res.cookie('opneid', cookie.openid);
+                res.redirect('/');
+            } else {
+                res.cookie('openid', userid);
+                res.redirect('/login');
+            }
+        }
+    });
+
+});
 
 /* GET home page. */
 router.get('/index/:id', function(req, res, next) {
