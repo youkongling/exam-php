@@ -185,6 +185,42 @@
                                     </label>
                                 </div>
                                 <% } %>
+                                <% if(data.question[0].multiple[j].queschoiceE){ %>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <span class="
+                                                <% for(var k=0 ; k<data.question[0].multiple[j].questionanswer.length ; k++){ %>
+                                                    <% if(data.question[0].multiple[j].questionanswer[k] == 'E'){ %>
+                                                        span-choice
+                                                    <% } %>
+                                                <% }%>
+                                            ">E</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[0].multiple[j].queschoiceE %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <% } %>
+                                <% if(data.question[0].multiple[j].queschoiceF){ %>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <span class="
+                                                <% for(var k=0 ; k<data.question[0].multiple[j].questionanswer.length ; k++){ %>
+                                                    <% if(data.question[0].multiple[j].questionanswer[k] == 'F'){ %>
+                                                        span-choice
+                                                    <% } %>
+                                                <% }%>
+                                            ">F</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[0].multiple[j].queschoiceF %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <% } %>
                             </div>
                         </div>
                     <% } %>
