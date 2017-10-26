@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
             res.cookie('userid', _body.userid);
             res.cookie('number', _body.userstaffid);
             res.cookie('name', _body.username);
-            res.redirect('/index/' + _body.jobid);
+            res.redirect('/');
         }
     });
 });

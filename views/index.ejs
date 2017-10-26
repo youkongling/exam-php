@@ -38,9 +38,9 @@
     <style type="text/css">
 
     </style>
-    <div class="am-g">
+    <div class="am-g xb-scorelist" style="height:cacl(100% - 89px)">
         <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
-            <div class="am-g xb-scorelist">
+            <div class="am-g" style="margin-top: 0px;">
                 <div class="am-u-sm-12">
                     <ul class="am-list am-list-static am-list-border">
                         <% for(var i=0 ; i<data.length ; i++){ %>
@@ -48,23 +48,29 @@
                                 <span><%= data[i].examname %></span>
                                 <a href="/examList/<%= data[i].examid %>" class="am-btn am-btn-success">考试</a>
                             </li>
-                        <% } %>
+                            <% } %>
                     </ul>
                 </div>
             </div>
         </section>
     </div>
     <style>
-        .xb-bottom .xb-bottom-img{
-            position: absolute;
-            left: 50%;
-            margin-left: -20%;
-            width: 40%;
-            bottom: 10px;
-        }
-        .xb-bottom .xb-bottom-img img{
-            width: 100%;
-        }
+    .xb-bottom .am-u-sm-12 {
+        height: 40px;
+    }
+
+    .xb-bottom .xb-bottom-img {
+        position: absolute;
+        left: 50%;
+        margin-left: -20%;
+        width: 40%;
+        bottom: 10px;
+        height: 30px;
+    }
+
+    .xb-bottom .xb-bottom-img img {
+        width: 100%;
+    }
     </style>
     <div class="xb-bottom am-g">
         <div class="am-u-sm-12">
