@@ -35,13 +35,23 @@
             <a href="#right-link" class=""></a>
         </div>
     </header>
-   <style type="text/css">
+    <style type="text/css">
+    .xb-list{
+        height: calc(100% - 101px);
+        overflow: hidden;
+        position: relative;
+        overflow-y: scroll; 
+    }
+
     .xb-list .am-list {
         margin-top: 10px;
     }
 
     .xb-list .am-list li {
         margin-bottom: 10px;
+        padding: 0.5em;
+        border: none;
+        border-bottom: 1px solid #dedede;
     }
 
     .xb-list .am-list li i:last-child {
@@ -51,6 +61,7 @@
     .xb-list .am-list span {
         display: inline-block;
         padding-left: 10px;
+        width: 300px;
     }
 
     .xb-list .am-list li a {
@@ -62,7 +73,29 @@
     <div class="am-g xb-list">
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
-                <li>
+                <% if(data && type == 'knowsList'){ %>
+                    <% for(var i=0;i<data.length;i++){ %>
+                        <li>
+                            <a href="/knowledge/<%= data[i].id %>">
+                                <!-- <i class="am-icon-area-chart am-icon-sm am-icon-fw"></i> -->
+                                <span><%= data[i].knowtype %></span>
+                                <i class="am-icon-angle-right am-icon-fw"></i>
+                            </a>
+                        </li>
+                    <% }%>
+                <% }%>
+                <% if(data && type == 'knowsDetail'){ %>
+                    <% for(var i=0;i<data.length;i++){ %>
+                        <li>
+                            <a href="/knowledge/article/<%= data[i].id %>">
+                                <!-- <i class="am-icon-area-chart am-icon-sm am-icon-fw"></i> -->
+                                <span><%= data[i].title %></span>
+                                <i class="am-icon-angle-right am-icon-fw"></i>
+                            </a>
+                        </li>
+                    <% }%>
+                <% }%>
+                <!-- <li>
                     <a href="#">
                         <i class="am-icon-area-chart am-icon-sm am-icon-fw"></i>
                         <span>财政管理</span>
@@ -89,35 +122,35 @@
                         <span>推广营销</span>
                         <i class="am-icon-angle-right am-icon-fw"></i>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
+        <div class="am-u-sm-12">
+            <% if(data && type == 'knowsArticle'){ %>
+            <article class="am-article">
+                <!-- <div class="am-article-hd">
+                    <h1 class="am-article-title"><%= data.title %></h1>
+                    <p class="am-article-meta"><%= data.time %></p>
+                </div> -->
+                <div class="am-article-bd" id="str">
+                    <%- data.article %>
+                </div>
+            </article>
+            <% } %>
+        </div>
     </div>
-    <!-- <div class="xb-bottom am-g">
-        <div class="xb-tab am-u-sm-6">
-            <a href="/">
-                <span class="xb-tab-icon"><i class="am-icon-wpforms am-icon-sm am-icon-fw"></i></span>
-                <span class="xb-tab-span">考试</span>
-            </a>
-        </div>
-        <div class="xb-tab am-u-sm-6">
-            <a href="javascript:window.history.back();">
-                <span class="xb-tab-icon"><i class="am-icon-user am-icon-sm am-icon-fw"></i></span>
-                <span class="xb-tab-span">个人中心</span>
-            </a>
-        </div>
-    </div> -->
     <style>
-        .xb-bottom .xb-bottom-img{
-            position: absolute;
-            left: 50%;
-            margin-left: -20%;
-            width: 40%;
-            bottom: 10px;
-        }
-        .xb-bottom .xb-bottom-img img{
-            width: 100%;
-        }
+    .xb-bottom .xb-bottom-img {
+        position: absolute;
+        left: 50%;
+        margin-left: -20%;
+        width: 40%;
+        bottom: 10px;
+    }
+
+    .xb-bottom .xb-bottom-img img {
+        width: 100%;
+    }
     </style>
     <div class="xb-bottom am-g">
         <div class="am-u-sm-12">
@@ -128,6 +161,12 @@
     </div>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/amazeui/dist/js/amazeui.min.js"></script>
+    <script>
+        <% if(type == "knowsArticle"){ %>
+            var data = document.querySelector("#str");
+            data.innerHTML=data.innerText;
+        <% } %>
+    </script>
 </body>
 
 </html>

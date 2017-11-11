@@ -13,7 +13,8 @@ var config = {
     user: 'http://220.176.196.12/index.php?api-app-user',
     score: 'http://220.176.196.12/index.php?api-app-user-getUserExamList',
     confirm: 'http://220.176.196.12/index.php?api-app-user-checkUser',
-    openid: 'http://220.176.196.12/index.php?api-app-user-checkUserByOpenId&openid='
+    openid: 'http://220.176.196.12/index.php?api-app-user-checkUserByOpenId&openid=',
+    knows: 'http://211.159.186.84/index.php?api-app-knows-getKnows'
 }
 
 module.exports = config;
