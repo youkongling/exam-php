@@ -69,8 +69,34 @@
         padding: 0;
         color: #000;
     }
+
+    .xb-list-search{
+        margin-top: 10px;
+    }
+
+    .xb-list-search .am-btn-default{
+        background-color: #317A1F;
+        color: #FFF;
+    }
+    .xb-list-search .am-btn-default span{
+        color: #FFF;
+    }
     </style>
     <div class="am-g xb-list">
+        <% if(type !== 'knowsArticle'){ %>
+        <div class="am-u-sm-12 xb-list-search">
+            <form action="/knowledge/search" method="POST">
+                <div class="am-input-group">
+                    <input type="text" name="info" class="am-form-field">
+                    <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default" type="submit">
+                            <span class="am-icon-search"></span>
+                        </button>
+                    </span>
+                </div> 
+            </form>
+        </div>
+        <% } %>
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
                 <% if(data && type == 'knowsList'){ %>
@@ -138,6 +164,7 @@
             </article>
             <% } %>
         </div>
+
     </div>
     <style>
     .xb-bottom .xb-bottom-img {
