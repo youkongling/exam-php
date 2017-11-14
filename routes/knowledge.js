@@ -32,7 +32,7 @@ router.post('/search', function(req, res, next) {
     request.post({ url: config.search, form: { keyword: form.info } }, function(error, response, body) {
         var _body = JSON.parse(body);
         if (_body == null) {
-            res.redirect('/knowledge');
+            res.render('knowledge', { data: null, type: 'cantFind' });
         } else {
             console.log(_body);
             res.render('knowledge', { data: _body.data, type: 'knowsDetail' });

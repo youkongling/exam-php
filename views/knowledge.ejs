@@ -97,6 +97,11 @@
             </form>
         </div>
         <% } %>
+        <% if(type == 'cantFind'){ %>
+        <div class="am-u-sm-12">
+            <h4 class="am-text-center" style="margin-top: 10px;">找不到匹配结果，换个关键词试试</h4>
+        </div>
+        <% } %>
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
                 <% if(data && type == 'knowsList'){ %>
