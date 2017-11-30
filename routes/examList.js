@@ -12,6 +12,8 @@ router.get('/:id', function(req, res, next) {
             res.render('examList');
         } else {
             var _body = JSON.parse(body);
+            console.log(111)
+            console.log(_body);
             res.render('examList', { data: _body });
         }
     })
