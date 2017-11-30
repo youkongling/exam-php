@@ -179,7 +179,7 @@
                     <% } %>
                     <% if(data.question[1]){ %>
                     <% for(var j=0; j<data.question[1].multiple.length ;j++){ %>
-                        <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + data.question[2].judge.length + j + 1 %>">
+                        <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + (data.question[2] ? data.question[2].judge.length : 0) + j + 1 %>">
                             <div class="xb-question-text">
                                 <%= data.question[1].multiple[j].question %><strong><%= data.question[1].multiple[j].questiontype %></strong></div>
                             <div class="xb-question-choice" data-choose="false">

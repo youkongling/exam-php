@@ -12,6 +12,7 @@ router.get('/:id', function(req, res, next) {
             res.render('anwser');
         } else {
             var _body = JSON.parse(body);
+            console.log(_body);
             res.render('anwser', { data: _body });
         }
     })
@@ -27,6 +28,7 @@ router.post('/:id', function(req, res, next) {
     request.post({url : config.test + '-' +examid ,form: result}, function(error, response, body){
         // console.log(body)
         var _body = JSON.parse(body);
+        console.log(_body)
         res.render('anwser', { data: _body });
     })
 });
