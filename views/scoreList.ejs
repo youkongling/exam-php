@@ -36,34 +36,52 @@
         </div>
     </header>
     <style type="text/css">
+    .xb-scorelist .am-list span:nth-child(1) {
+        width: 150px;
+        word-wrap: 150px;
+        margin-right: 4px;
+    }
 
+    .xb-scorelist .am-list span:nth-child(2) {
+        float: right;
+        margin-right: 90px;
+    }
+
+    .xb-scorelist li>a {
+        position: absolute;
+        right: 50px;
+        display: inline-block;
+        padding: 0.3em 0.3em;
+    }
     </style>
     <div class="am-g xb-scorelist">
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
                 <% if(data.examlist){ %>
-                <% for( var i=0 ; i<data.examlist.length ; i++){ %>
-                    <li>
-                        <span><%= data.examlist[i].examname %></span>
-                        <span><strong><%= data.examlist[i].score %></strong>分</span>
-                        <a href="/examList/<%= data.examlist[i].examid %>" class="am-btn am-btn-success">重考</a>
-                    </li>
-                    <% } %>
-                <% } %>
+                    <% for( var i=0 ; i<data.examlist.length ; i++){ %>
+                        <li>
+                            <span><%= data.examlist[i].examname %></span>
+                            <span><strong><%= data.examlist[i].score %></strong>分</span>
+                            <a href="/examList/<%= data.examlist[i].examid %>" class="am-btn am-btn-success" style="right: 0px;">排名</a>
+                            <a href="/examList/<%= data.examlist[i].examid %>" class="am-btn am-btn-success">重考</a>
+                        </li>
+                        <% } %>
+                            <% } %>
             </ul>
         </div>
     </div>
     <style>
-        .xb-bottom .xb-bottom-img{
-            position: absolute;
-            left: 50%;
-            margin-left: -20%;
-            width: 40%;
-            bottom: 10px;
-        }
-        .xb-bottom .xb-bottom-img img{
-            width: 100%;
-        }
+    .xb-bottom .xb-bottom-img {
+        position: absolute;
+        left: 50%;
+        margin-left: -20%;
+        width: 40%;
+        bottom: 10px;
+    }
+
+    .xb-bottom .xb-bottom-img img {
+        width: 100%;
+    }
     </style>
     <div class="xb-bottom am-g">
         <div class="am-u-sm-12">

@@ -108,9 +108,70 @@
                     <% } %>
                     <% } %>
 
+                    <% if(data.question[0].judge){ %>
+                    <% for(var i=0; i<data.question[0].judge.length ; i++){ %>
+                        <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + i + 1 %>">
+                            <div class="xb-question-text"> 
+                            <%= data.question[0].judge[i].question %>
+                            <strong><%= data.question[0].judge[i].questiontype %></strong>
+                            </div>
+                            <div class="xb-question-choice" data-choose="false">
+                                <% if(data.question[0].judge[i].queschoiceA){ %>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <span class="<%= data.question[0].judge[i].questionanswer=='A'?'span-choice':'' %>">A</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[0].judge[i].queschoiceA %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <% } %>
+                                <% if(data.question[0].judge[i].queschoiceB){ %>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <span class="<%= data.question[0].judge[i].questionanswer=='B'?'span-choice':'' %>">B</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[0].judge[i].queschoiceB %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <% } %>
+                                <% if(data.question[0].judge[i].queschoiceC){ %>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <span class="<%= data.question[0].judge[i].questionanswer=='C'?'span-choice':'' %>">C</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[0].judge[i].queschoiceC %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <% } %>
+                                <% if(data.question[0].judge[i].queschoiceD){ %>
+                                <div class="am-g xb-question-15b">
+                                    <label>
+                                        <div class="am-u-sm-1 xb-radio">
+                                            <span class="<%= data.question[0].judge[i].questionanswer=='D'?'span-choice':'' %>">D</span>
+                                        </div>
+                                        <div class="am-u-sm-11">
+                                            <%= data.question[0].judge[i].queschoiceD %>
+                                        </div>
+                                    </label>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% } %>
+                    <% } %>
+
                     <% if(data.question[0].multiple){ %>
                     <% for(var j=0; j<data.question[0].multiple.length ;j++){ %>
-                        <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + j + 1 %>">
+                        <div class="swiper-slide" data-hash="<%= data.question[0].radio.length + (data.question[0].judge ? data.question[0].judge.length : 0) + j + 1 %>">
                             <div class="xb-question-text"> <%= data.question[0].multiple[j].question %><strong><%= data.question[0].multiple[j].questiontype %></strong></div>
                             <div class="xb-question-choice" data-choose="false">
                                 <% if(data.question[0].multiple[j].queschoiceA){ %>

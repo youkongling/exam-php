@@ -71,10 +71,11 @@
             <h2>答题卡</h2>
         </div>
         <div class="xb-card-box">
+            <% if(data.result.radio){ %>
             <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
                 <div class="xb-score-title">单选题</div>
                 <div class="am-g">
-                    <% if(data.result.radio){ %>
+                    
                         <% for(var i=0 ; i<data.result.radio.length ; i++){ %>
                             <div class="am-u-sm-2 am-u-end">
                                 <% if(data.result.radio[i].type){ %>
@@ -84,13 +85,15 @@
                                         <% } %>
                             </div>
                             <% } %>
-                                <% } %>
+                                
                 </div>
             </div>
+            <% } %>
+            <% if(data.result.multiple){ %>
             <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
                 <div class="xb-score-title">多选题</div>
                 <div class="am-g">
-                    <% if(data.result.multiple){ %>
+                    
                         <% for(var i=0 ; i<data.result.multiple.length ; i++){ %>
                             <div class="am-u-sm-2 am-u-end">
                                 <% if(data.result.multiple[i].type){ %>
@@ -100,13 +103,14 @@
                                         <% } %>
                             </div>
                             <% } %>
-                                <% } %>
+                            
                 </div>
             </div>
+            <% } %>
+            <% if(data.result.judge){ %>
             <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
                 <div class="xb-score-title">判断题</div>
                 <div class="am-g">
-                    <% if(data.result.judge){ %>
                         <% for(var i=0 ; i<data.result.judge.length ; i++){ %>
                             <div class="am-u-sm-2 am-u-end">
                                 <% if(data.result.judge[i].type){ %>
@@ -116,9 +120,10 @@
                                         <% } %>
                             </div>
                             <% } %>
-                                <% } %>
+                        
                 </div>
             </div>
+            <% } %>
         </div>
     </div>
     <div class="xb-bottom am-g">
@@ -131,14 +136,19 @@
                 <% if(data.result.multiple){ %>
                     <% for(var i=0 ; i<data.result.multiple.length ; i++){ %>
                         <input type="number" value="<%= data.result.multiple[i].id %>" name="<%= data.result.multiple[i].id %>">
-                        <% } %>
-                            <% } %>
-                                <% if(data.result.radio){ %>
-                                    <% for(var i=0 ; i<data.result.radio.length ; i++){ %>
-                                        <input type="number" value="<%= data.result.radio[i].id %>" name="<%= data.result.radio[i].id %>">
-                                        <% } %>
-                                            <% } %>
-                                                <button type="submit" id="submit"></button>
+                    <% } %>
+                <% } %>
+                <% if(data.result.radio){ %>
+                    <% for(var i=0 ; i<data.result.radio.length ; i++){ %>
+                        <input type="number" value="<%= data.result.radio[i].id %>" name="<%= data.result.radio[i].id %>">
+                    <% } %>
+                <% } %>
+                <% if(data.result.judge){ %>
+                    <% for(var i=0 ; i<data.result.judge.length ; i++){ %>
+                        <input type="number" value="<%= data.result.judge[i].id %>" name="<%= data.result.judge[i].id %>">
+                    <% } %>
+                <% } %>
+                <button type="submit" id="submit"></button>
             </form>
             <script type="text/javascript">
             var btn = document.querySelector("#btn");
