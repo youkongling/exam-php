@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> 上饶农商考试系统 </title>
+    <title> 首页 </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="/bower_components/amazeui/dist/css/amazeui.min.css">
@@ -30,47 +30,63 @@
                 <i class="am-icon-angle-left am-fr am-icon-lg"></i>
             </a>
         </div>
-        <h1 class="am-header-title">考试中心</h1>
+        <h1 class="am-header-title">考试排名</h1>
         <div class="am-header-right am-header-nav">
-            <!-- <a href="#right-link" class=""></a> -->
+            <a href="#right-link" class=""></a>
         </div>
     </header>
     <style type="text/css">
-    .am-list-border>li>a:focus,
-    .am-list-border>li>a:hover,
-    .am-list-bordered>li>a:focus,
-    .am-list-bordered>li>a:hover{
-        background-color: #317A1F;
-    }
+        .xb-scorelist .item-sql{
+            display: inline-block;
+            /*float: left;*/
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 30px;
+            border-radius: 50%;
+            border: 1px solid #317A1F;
+        }
+        .xb-scorelist .item-icon{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            border-radius: 3px;
+            /*border: 1px solid #317A1F;*/
+        }
+        .xb-scorelist .item-icon img{
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+        }
+        .xb-scorelist .item-score{
+            display: inline-block;
+        }
     </style>
-    <div class="am-g xb-scorelist" style="height:cacl(100% - 89px)">
-        <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
-            <div class="am-g" style="margin-top: 0px;">
-                <div class="am-u-sm-12">
-                    <ul class="am-list am-list-static am-list-border">
-                        <% for(var i=0 ; i<data.length ; i++){ %>
-                            <li>
-                                <span><%= data[i].examname %></span>
-                                <a href="<%= (data[i].status == 0) ? ('/examList/' + data[i].examid) : 'javascript:void(0);' %>" class="am-btn am-btn-success" <%= (data[i].status == 0) ? '' : 'disabled' %> >考试</a>
-                            </li>
-                            <% } %>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div class="am-g xb-scorelist">
+        <div class="am-u-sm-12">
+            <h2 class="am-text-center" style="padding-top: 10px;">柜员考试测试</h2>
+        </div>
+        <div class="am-u-sm-12">
+            <ul class="am-list am-list-static am-list-border">
+                <li>
+                    <div class="item-sql">1</div>
+                    <div class="item-icon">
+                        <img src="/images/user.jpg" alt="">
+                    </div>
+                    <div class="item-score"><b>76</b>分</div>
+                </li>
+            </ul>
+        </div>
     </div>
     <style>
-    .xb-bottom .am-u-sm-12 {
-        height: 40px;
-    }
-
     .xb-bottom .xb-bottom-img {
         position: absolute;
         left: 50%;
         margin-left: -20%;
         width: 40%;
         bottom: 10px;
-        height: 30px;
     }
 
     .xb-bottom .xb-bottom-img img {
@@ -86,13 +102,13 @@
     </div>
     <!-- <div class="xb-bottom am-g">
         <div class="xb-tab am-u-sm-6">
-            <a href="#">
+            <a href="/">
                 <span class="xb-tab-icon"><i class="am-icon-wpforms am-icon-sm am-icon-fw"></i></span>
                 <span class="xb-tab-span">考试</span>
             </a>
         </div>
         <div class="xb-tab am-u-sm-6">
-            <a href="/users">
+            <a href="javascript:window.history.back();">
                 <span class="xb-tab-icon"><i class="am-icon-user am-icon-sm am-icon-fw"></i></span>
                 <span class="xb-tab-span">个人中心</span>
             </a>
