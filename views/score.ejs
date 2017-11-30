@@ -103,6 +103,22 @@
                                 <% } %>
                 </div>
             </div>
+            <div class="am-u-sm-10 am-u-sm-offset-1 am-u-end xb-card-score">
+                <div class="xb-score-title">判断题</div>
+                <div class="am-g">
+                    <% if(data.result.judge){ %>
+                        <% for(var i=0 ; i<data.result.judge.length ; i++){ %>
+                            <div class="am-u-sm-2 am-u-end">
+                                <% if(data.result.judge[i].type){ %>
+                                    <span class="xb-score-success" data-id="<%= data.result.judge[i].id %>"><%= i+1 %></span>
+                                    <% }else{ %>
+                                        <span class="xb-score-danger" data-id="<%= data.result.judge[i].id %>"><%= i+1 %></span>
+                                        <% } %>
+                            </div>
+                            <% } %>
+                                <% } %>
+                </div>
+            </div>
         </div>
     </div>
     <div class="xb-bottom am-g">
