@@ -36,47 +36,64 @@
         </div>
     </header>
     <style type="text/css">
-        .xb-scorelist .item-sql{
-            display: inline-block;
-            /*float: left;*/
-            width: 30px;
-            height: 30px;
-            font-size: 20px;
-            text-align: center;
-            font-weight: bold;
-            line-height: 30px;
-            border-radius: 50%;
-            border: 1px solid #317A1F;
-        }
-        .xb-scorelist .item-icon{
-            display: inline-block;
-            height: 40px;
-            width: 40px;
-            border-radius: 3px;
-            /*border: 1px solid #317A1F;*/
-        }
-        .xb-scorelist .item-icon img{
-            width: 100%;
-            height: 100%;
-            border-radius: 3px;
-        }
-        .xb-scorelist .item-score{
-            display: inline-block;
-        }
+    .xb-scorelist .item-sql {
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+        line-height: 26px;
+        border-radius: 50%;
+        color: #FFF;
+        background-color: #317A1F;
+        border: 1px solid #317A1F;
+    }
+
+    .xb-scorelist .item-name {
+        display: inline-block;
+        font-size: 18px;
+    }
+
+    .xb-scorelist .item-score {
+        display: inline-block;
+        font-size: 18px;
+        float: right;
+        line-height: 32px;
+    }
     </style>
     <div class="am-g xb-scorelist">
         <div class="am-u-sm-12">
-            <h2 class="am-text-center" style="padding-top: 10px;">柜员考试测试</h2>
+            <h2 class="am-text-center" style="padding-top: 10px;">
+                <% for(var i=0 ; i < data.length ; i++ ){ %>
+                <% if(data[i].status == 1){ %>
+                    <div class="item-sql"><%= i+1 %></div>
+                    <div class="item-name"><%= data[i].username %></div>
+                    <div class="item-score" style="float: none;"><b><%= data[i].score %></b>分</div>
+                <% } %>
+                <% } %>
+            </h2>
         </div>
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
+                <% for(var i=0 ; i < data.length ; i += 2){ %>
                 <li>
-                    <div class="item-sql">1</div>
-                    <div class="item-icon">
-                        <img src="/images/user.jpg" alt="">
+                    <div class="am-g">
+                        <div class="am-u-sm-6">
+                            <div class="item-sql"><%= i+1 %></div>
+                            <div class="item-name"><%= data[i].username %></div>
+                            <div class="item-score"><b><%= data[i].score %></b>分</div>
+                        </div>
+                        <% if(data[i+1]){ %>
+                        <div class="am-u-sm-6">
+                            <div class="item-sql"><%= i+2 %></div>
+                            <div class="item-name"><%= data[i+1].username %></div>
+                            <div class="item-score"><b><%= data[i+1].score %></b>分</div>
+                        </div>
+                        <% } %>
                     </div>
-                    <div class="item-score"><b>76</b>分</div>
                 </li>
+                <% } %>
             </ul>
         </div>
     </div>

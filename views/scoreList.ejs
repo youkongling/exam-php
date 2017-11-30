@@ -62,11 +62,11 @@
                         <li>
                             <span><%= data.examlist[i].examname %></span>
                             <span><strong><%= data.examlist[i].score %></strong>分</span>
-                            <a href="/examList/<%= data.examlist[i].examid %>" class="am-btn am-btn-success" style="right: 0px;">排名</a>
+                            <a href="/list/<%= data.examlist[i].examid %>" class="am-btn am-btn-success" style="right: 0px;">排名</a>
                             <a href="<%= (data.examlist[i].status == 0) ? ('/examList/' + data.examlist[i].examid) : 'javascript:void(0);' %>" class="am-btn am-btn-success" <%= (data.examlist[i].status == 0) ? '' : 'disabled' %> >重考</a>
                         </li>
-                        <% } %>
-                            <% } %>
+                    <% } %>
+                <% } %>
             </ul>
         </div>
     </div>

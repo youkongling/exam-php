@@ -15,7 +15,8 @@ var config = {
     confirm: 'http://220.176.196.12/index.php?api-app-user-checkUser',
     openid: 'http://220.176.196.12/index.php?api-app-user-checkUserByOpenId&openid=',
     knows: 'http://220.176.196.12/index.php?api-app-knows-getKnows',
-    search: 'http://220.176.196.12/index.php?api-app-knows-searchKnows'
+    search: 'http://220.176.196.12/index.php?api-app-knows-searchKnows',
+    rank: 'http://220.176.196.12/index.php?api-app-user-getRanking'
 }
 
 module.exports = config;
