@@ -37,14 +37,14 @@
     </header>
     <style type="text/css">
     .xb-scorelist .am-list span:nth-child(1) {
-        width: 150px;
-        word-wrap: 150px;
+        width: 180px;
+        word-wrap: 180px;
         margin-right: 4px;
     }
 
     .xb-scorelist .am-list span:nth-child(2) {
         float: right;
-        margin-right: 90px;
+        margin-right: 50px;
     }
 
     .xb-scorelist li>a {
@@ -63,7 +63,7 @@
                             <span><%= data.examlist[i].examname %></span>
                             <span><strong><%= data.examlist[i].score %></strong>分</span>
                             <a href="/examList/<%= data.examlist[i].examid %>" class="am-btn am-btn-success" style="right: 0px;">排名</a>
-                            <a href="/examList/<%= data.examlist[i].examid %>" class="am-btn am-btn-success">重考</a>
+                            <a href="<%= (data.examlist[i].status == 0) ? ('/examList/' + data.examlist[i].examid) : 'javascript:void(0);' %>" class="am-btn am-btn-success" <%= (data.examlist[i].status == 0) ? '' : 'disabled' %> >重考</a>
                         </li>
                         <% } %>
                             <% } %>

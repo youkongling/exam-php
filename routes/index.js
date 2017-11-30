@@ -59,7 +59,7 @@ router.get('/index/:id', function(req, res, next) {
             res.render('index');
         } else {
             var _body = JSON.parse(body);
-            // console.log(_body)
+            console.log(_body)
             res.render('index', { data: _body.data, cookie: _cookie.number });
         }
     })
