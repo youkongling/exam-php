@@ -14,6 +14,7 @@ var score = require('./routes/score');
 var scoreList = require('./routes/scoreList');
 var knowledge = require('./routes/knowledge');
 var list = require('./routes/list');
+var scoreView = require('./routes/scoreView');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/score', score);
 app.use('/scoreList', scoreList);
 app.use('/knowledge', knowledge);
 app.use('/list', list);
+app.use('/scoreView', scoreView);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
