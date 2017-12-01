@@ -30,62 +30,41 @@
                 <i class="am-icon-angle-left am-fr am-icon-lg"></i>
             </a>
         </div>
-        <h1 class="am-header-title">考试排名</h1>
+        <h1 class="am-header-title">答案解析</h1>
         <div class="am-header-right am-header-nav">
             <a href="#right-link" class=""></a>
         </div>
     </header>
     <style type="text/css">
-    .xb-scorelist .item-sql {
-        display: inline-block;
-        width: 26px;
-        height: 26px;
-        font-size: 20px;
-        text-align: center;
-        font-weight: bold;
-        line-height: 26px;
-        border-radius: 50%;
-        color: #000;
-        /*background-color: #317A1F;*/
-        /*border: 1px solid #317A1F;*/
+    .xb-scorelist .am-list span:nth-child(1) {
+        width: 180px;
+        word-wrap: 180px;
+        margin-right: 4px;
     }
 
-    .xb-scorelist .item-name {
-        display: inline-block;
-        font-size: 18px;
-    }
-
-    .xb-scorelist .item-score {
-        display: inline-block;
-        font-size: 18px;
+    .xb-scorelist .am-list span:nth-child(2) {
         float: right;
-        line-height: 32px;
+        margin-right: 50px;
+    }
+
+    .xb-scorelist li>a {
+        position: absolute;
+        right: 50px;
+        display: inline-block;
+        padding: 0.3em 0.3em;
     }
     </style>
     <div class="am-g xb-scorelist">
         <div class="am-u-sm-12">
-            <h2 class="am-text-center" style="padding-top: 10px;">
-                <% for(var i=0 ; i < data.length ; i++ ){ %>
-                <% if(data[i].status == 1){ %>
-                    <div class="item-sql"><%= i+1 %></div>
-                    <div class="item-name"><%= data[i].username %></div>
-                    <div class="item-score" style="float: none;"><b><%= data[i].score %></b>分</div>
-                <% } %>
-                <% } %>
-            </h2>
-        </div>
-        <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
-                <% for(var i=0 ; i < data.length ; i++){ %>
-                <li style="padding: 0.2em 0.2em;">
-                    <div class="am-g">
-                        <div class="am-u-sm-8 am-u-sm-offset-2">
-                            <div class="item-sql"><%= i+1 %></div>
-                            <div class="item-name"><%= data[i].username %></div>
-                            <div class="item-score"><b><%= data[i].score %></b>分</div>
-                        </div>
-                    </div>
-                </li>
+                <% if(data.examlist){ %>
+                    <% for( var i=0 ; i<data.examlist.length ; i++){ %>
+                        <li>
+                            <span><%= data.examlist[i].examname %></span>
+                            <span><strong><%= data.examlist[i].score %></strong>分</span>
+                            <a href="/anwser/<%= data.examlist[i].examid %>" class="am-btn am-btn-success" style="right: 0px;">查看解析</a>
+                        </li>
+                    <% } %>
                 <% } %>
             </ul>
         </div>
