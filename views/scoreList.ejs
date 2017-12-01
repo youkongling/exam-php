@@ -53,18 +53,45 @@
         display: inline-block;
         padding: 0.3em 0.3em;
     }
+
+    .xb-scorelist h2{
+        margin-bottom: 4px;
+    }
     </style>
     <div class="am-g xb-scorelist">
         <div class="am-u-sm-12">
             <ul class="am-list am-list-static am-list-border">
                 <% if(data.examlist){ %>
                     <% for( var i=0 ; i<data.examlist.length ; i++){ %>
+                        <% if(data.examlist[i].status == 1){ %>
+                        <h2 class="am-text-center">正式考试</h2>
+                        <% break; %>
+                        <% } %>
+                    <% } %>
+                    <% for( var i=0 ; i<data.examlist.length ; i++){ %>
+                        <% if(data.examlist[i].status == 1){ %>
                         <li>
                             <span><%= data.examlist[i].examname %></span>
                             <span><strong><%= data.examlist[i].score %></strong>分</span>
                             <a href="/list/<%= data.examlist[i].examid %>" class="am-btn am-btn-success" style="right: 0px;">排名</a>
                             <a href="<%= (data.examlist[i].status == 0) ? ('/examList/' + data.examlist[i].examid) : 'javascript:void(0);' %>" class="am-btn am-btn-success" <%= (data.examlist[i].status == 0) ? '' : 'disabled' %> >重考</a>
                         </li>
+                        <% } %>
+                    <% } %>
+                    <% for( var i=0 ; i<data.examlist.length ; i++){ %>
+                        <% if(data.examlist[i].status == 0){ %>
+                        <h2 class="am-text-center">考试测试</h2>
+                        <% } %>
+                    <% } %>
+                    <% for( var i=0 ; i<data.examlist.length ; i++){ %>
+                        <% if(data.examlist[i].status == 0){ %>
+                        <li>
+                            <span><%= data.examlist[i].examname %></span>
+                            <span><strong><%= data.examlist[i].score %></strong>分</span>
+                            <a href="/list/<%= data.examlist[i].examid %>" class="am-btn am-btn-success" style="right: 0px;">排名</a>
+                            <a href="<%= (data.examlist[i].status == 0) ? ('/examList/' + data.examlist[i].examid) : 'javascript:void(0);' %>" class="am-btn am-btn-success" <%= (data.examlist[i].status == 0) ? '' : 'disabled' %> >重考</a>
+                        </li>
+                        <% } %>
                     <% } %>
                 <% } %>
             </ul>
