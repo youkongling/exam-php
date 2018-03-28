@@ -7,17 +7,17 @@
 // }
 
 var config = {
-    list: 'http://220.176.196.12/index.php?api-app-api',
-    anwser: 'http://220.176.196.12/index.php?api-app-api-getAnswer',
-    test: 'http://220.176.196.12/index.php?api-app-api-getQuesList',
-    user: 'http://220.176.196.12/index.php?api-app-user',
-    score: 'http://220.176.196.12/index.php?api-app-user-getUserExamList',
-    confirm: 'http://220.176.196.12/index.php?api-app-user-checkUser',
-    openid: 'http://220.176.196.12/index.php?api-app-user-checkUserByOpenId&openid=',
-    knows: 'http://220.176.196.12/index.php?api-app-knows-getKnows',
-    search: 'http://220.176.196.12/index.php?api-app-knows-searchKnows',
-    rank: 'http://220.176.196.12/index.php?api-app-user-getRanking',
-    scoreView: 'http://220.176.196.12/index.php?api-app-api-getAllList'
+    list: 'http://106.14.161.68/index.php?api-app-api',
+    anwser: 'http://106.14.161.68/index.php?api-app-api-getAnswer',
+    test: 'http://106.14.161.68/index.php?api-app-api-getQuesList',
+    user: 'http://106.14.161.68/index.php?api-app-user',
+    score: 'http://106.14.161.68/index.php?api-app-user-getUserExamList',
+    confirm: 'http://106.14.161.68/index.php?api-app-user-checkUser',
+    openid: 'http://106.14.161.68/index.php?api-app-user-checkUserByOpenId&openid=',
+    knows: 'http://106.14.161.68/index.php?api-app-knows-getKnows',
+    search: 'http://106.14.161.68/index.php?api-app-knows-searchKnows',
+    rank: 'http://106.14.161.68/index.php?api-app-user-getRanking',
+    scoreView: 'http://106.14.161.68/index.php?api-app-api-getAllList'
 }
 
 module.exports = config;
